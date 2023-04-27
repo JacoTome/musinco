@@ -15,10 +15,6 @@ The following user stories are the one that the use cases are built around.
 
 2. As a beginner guitarist, who can't play at home because of the neighbors, i want to find a place where i can play my guitar, so that i can do my exercise and improve myself.
 
-3. As a singer, i want to find some events, so that i can start to play in public and give my career a boost.
-
-4. As a bar owner, i want to find musicians to play in my bar, so that i can attract more customers.
-
 ---
 
 ## Actors
@@ -72,7 +68,7 @@ The user can play along with the system.
 
 1. The system will detect the actual musical context. [Exception 1]
 2. The user can press a button to start the backing track provided by the system. [Exception 2]
-3. The user can play along with the system.
+3. The user can manually set the jam session parameters.
 
 **Exception**:
 
@@ -81,7 +77,7 @@ The user can play along with the system.
 
 ---
 
-#### Use Case "Update context"
+#### Use Case "Update musician context"
 
 **Abstract**:
 The user can set or update his actual musical context.
@@ -97,28 +93,7 @@ The user can set or update his actual musical context.
 
 ---
 
-#### Use Case "Check for event nearby"
-
-**Abstract**:
-The user can check if there are events around him where he can play.
-
-**Description**:
-
-1. The system will provide the user with a list of events corresponding to the user's interest. [Exception 1] [Exception 2]
-2. The user can click on an event and the system will provide the user with the details of that event.
-    2.1 The user can book himself at the event. [Exception 3]
-        2.1.1 The user can choose to participate as a musician or as a spectator.
-    2.2 The user can send that event to his friends.
-
-**Exceptions**:
-
-- Exception 1: There are no events near the user.
-- Exception 2: The events are not matching the user's interest.
-- Eccezione 3: The event is already full.
-
----
-
-#### Use Case "Search for a place to play in"
+#### Use Case "Search for a place to play"
 
 **Abstract**:
 The user can search available places where is possible to play with instruments, either for training or for playing in public.
@@ -150,27 +125,7 @@ The user can make himself available to play with other musicians.
 
 ---
 
-#### Use Case "Chat with friends"
-
-**Abstract**:
-The user can chat with his friends.
-
-**Description**:
-
-1. The user can open the chat page.
-2. The user can select a friend to chat with. [Exception 1]
-3. The user can send a message to the selected friend.
-
-**Exceptions**:
-
-- Exception 1: The user has no friends.
-
----
-
 #### Use Case "Add a place"
-
-**Abstract**:
-The user can add a place open to the public where is possible to play.
 
 **Description**:
 
@@ -190,12 +145,51 @@ The user can add a place open to the public where is possible to play.
 
 ---
 
-#### Use Case "Create event"
+#### Use case "Discover something new to play"
 
 **Abstract**:
-The user can create an event.
+The user can discover new music to play based on his musical context and what is played around him.
 
 **Description**:
+
+1. The system will provide the user with a list of genre that match the user's musical context based on what is played by the musicians near him.
+    1.1 The user can provide some other criteria to refine the search. [Exception 1]
+2. The user can click on a genre and the system will provide the user with the details of that genre.
+    2.1 The user can add that genre to his favorites.
+3. The user can play that genre with the system. [Exception 2]
+
+**Exceptions**:
+
+- Exception 1: There are no genres that match the user's musical context.
+- Exception 2: The system can't provide a backing track for that genre.
+
+---
+
+#### Use case "Start training session"
+
+**Abstract**:
+The user can start a training session with the system and keep track of his progress.
+
+**Description**:
+
+1. The user can open the page to start a training session and play along with the system. [Exception 1]
+2. The user can write what is training on.
+3. The user can set a daily reminder for the training session.
+
+**Exceptions**:
+
+- Exception 1: The system can't provide a backing track for the user.
+
+---
+
+### Discarded Use Cases
+
+- Create an event: The user can create an event and invite other musicians to join him.
+
+<!-- **Abstract**:
+The user can create an event. -->
+
+<!-- **Description**:
 
 1. The user can open the page to create an event.
 2. The user fills the form to create an event.
@@ -205,7 +199,97 @@ The user can create an event.
 **Exceptions**:
 
 - Exception 1: The event has some missing or wrong information.
-- Exception 2: The event is already present in the system.
+- Exception 2: The event is already present in the system. -->
+
+- Check for event nearby: The user can check if there are events around him where he can play.
+
+<!-- **Abstract**:
+The user can check if there are events around him where he can play. -->
+
+<!-- **Description**:
+
+1. The system will provide the user with a list of events corresponding to the user's interest. [Exception 1] [Exception 2]
+2. The user can click on an event and the system will provide the user with the details of that event.
+    2.1 The user can book himself at the event. [Exception 3]
+        2.1.1 The user can choose to participate as a musician or as a spectator.
+    2.2 The user can send that event to his friends.
+
+**Exceptions**:
+
+- Exception 1: There are no events near the user.
+- Exception 2: The events are not matching the user's interest.
+- Eccezione 3: The event is already full. -->
+
+---
+
+### Unlogged user
+
+Possible use cases for an unlogged user. The user that is not logged in the system should be able only to search for places where he can play or enter the system by registering or logging in.
+
+|![width: 100%](./images/UnloggedMusiUML.png)|
+|:--:|
+|*Complete schema of the unlogged user use cases*|
+
+---
+
+#### Use Case "Search for a place to play"
+
+Same as the logged user [use case](#use-case-search-for-a-place-to-play).
+
+---
+
+#### Use Case "Register to the system"
+
+**Abstract**:
+The user can register and create a new account in the system.
+
+**Description**:
+
+1. The user can open the page to register. [Exception 1]
+2. The user provide the necessary information to register. [Exception 2 - 3]
+    2.1 The user can register using third party services (e.g. Facebook, Google, etc.).
+
+**Exceptions**:
+
+- Exception 1: The account is already present in the system.
+- Exception 2: The user has provided some wrong or missing information.
+- Exception 3: The user has provided some information already used for other accounts.
+
+---
+
+#### Use Case "Login to the system"
+
+**Abstract**:
+The user can login to the system.
+
+**Description**:
+
+1. The user can open the page to login.
+2. The user provide the necessary information to login. [Exception 1 - 2]
+3. The user enters the system.
+
+**Exceptions**:
+
+- Exception 1: The user has provided some wrong or missing information.
+- Exception 2: The user is not registered in the system.
+
+---
+
+#### Use Case "Account Recovery"
+
+**Abstract**:
+
+The user can recover his account in case he has lost his credentials.
+
+**Description**:
+
+1. The user can open the page to recover his account.
+2. The user provide the necessary information to recover his account. [Exception 1 - 2]
+
+**Exceptions**:
+
+- Exception 1: The user has provided some wrong or missing information.
+- Exception 2: The user is not registered in the system.
 
 ---
 
@@ -214,4 +298,4 @@ The user can create an event.
 - Gli attori sono ancora da definire.
 - Mancano i casi d'uso "standard" per gestione profilo, login, registrazione, ecc.
 - Non sono sicuro se gli smart instrument siano da inserire come attori. Non se se considerarli un tutt'uno col sistema o un attore a parte.
-- Si potrebbe aggiungere un sistema per lasciare delle recensioni degli eventi o luoghi, volendo anche sui musicisti che si sono esibiti.
+- Si potrebbe aggiungere un sistema per lasciare delle recensioni per i luoghi dove suonare.
