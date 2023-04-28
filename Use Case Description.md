@@ -5,6 +5,14 @@ size: 16:9
 
 # User story and use case description
 
+## Application description and main goals
+
+The idea around the application is to help musician in their daily life, providing them with a tool that can help them to find other musicians to play with, places where they can play their instruments and a way to track their progress in a way to improve themselves.
+
+The main goal of the applicatione is to offer a way for the user to meet new musicians to jam with. The musicians suggested by the system will be based on the user's profile and the musical context of the user deducted in real-time.
+
+Secondarly, the application will be capable of keeping track of the user's progress and help him play along with a backing tracks, based on the user preferences and the real-time deducted musical context.
+
 ---
 
 ## User Stories
@@ -14,6 +22,8 @@ The following user stories are the one that the use cases are built around.
 1. As a musician, who just moved in town, i want to play my smart guitar with someone, so that i can have fun and meet new people.
 
 2. As a beginner guitarist, who can't play at home because of the neighbors, i want to find a place where i can play my guitar, so that i can do my exercise and improve myself.
+
+3. As a musician, who wants to train with his instruments, i want something that helps me track my progress and is capable of providing me with a backing track, so that i can improve myself.
 
 ---
 
@@ -33,7 +43,9 @@ The system will be accessible for different kind of actors
 Possible use cases for the users that are logged in the system.
 The main idea is that the application will help the user to find other musicians or places where he can play  
 
-|![width: 100%](./images/LoggedMusiUML.png)|
+---
+
+|![w:100% center](./images/LoggedMusiUML.png)|
 |:--:|
 |*Complete schema of the logged user use cases*|
 ---
