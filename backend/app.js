@@ -60,28 +60,17 @@ app.get('/sendQuery', async(req, res) =>  {
   LIMIT 100
 `;
   let dataToSend = '';
-  const stream = await  client.query.select(query)
-  stream.on('data', (data) => {
-    Object.keys(data).forEach((key) => {
-      dataToSend += `${key}: ${data[key].value} `;
-    });
-    console.log('---');
+const stream = await client.query.select(query);
+stream.on('data', (data) => {
+  Object.keys(data).forEach((key) => {
+    dataToSend += `${key}: ${data[key].value} `;
   });
-  stream.on('end', () => {
-    res.send(dataToSend);
-    console.log('Done');
-  }
+});
+stream.on('end', () => {
+  res.send(dataToSend);
+});
 
 
-  );
-  });
+app.get('/', (req, res) => res.send('Hello World!'));
 
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-
+app.listen(port, () => console.log(`Example app listening on port ${port}`));

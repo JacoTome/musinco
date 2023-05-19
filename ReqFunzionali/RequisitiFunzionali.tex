@@ -1,0 +1,116 @@
+\documentclass[12pt, a4paper]{article}
+\title{Requisiti Funzionali}
+\author{Jacopo Tomelleri}
+\date{Maggio 2023}
+\hyphenation{applicazione}
+\usepackage{graphicx}
+% Commento
+\begin{document}
+\maketitle
+\newpage
+
+\begin{abstract}
+    L'idea principale dell'applicazione è quella di trovare all'utente un compagno/a con il quale suonare insieme e/o trovare un locale dove suonare.
+    Inoltre, l'applicazione terrà uno storico delle sessioni di allenamento dell'utente, oltre che fare da compagno per le jam session.
+\end{abstract}
+
+\section{Introduzione}
+L'applicazione permetterà di suggerire profili di altre persone e luoghi in base alle preferenze musicali dell'utente, tramite l'utilizzo dell'ontologia MUSICO.
+L'applicazione sarà accessibile tramite app su sistemi Android e iOS e tramite web app.
+
+\subsection{Descrizione generale}
+
+Nel dettaglio, l'applicazione permetterà di:
+\begin{itemize}
+    \item[-] registrarsi al sistema, creando un profilo che permetta all'utente di mostrare le proprie preferenze musicali e abilità, oltre ai propri dati anagrafici ed eventuali contatti;
+    \item[-] incontrare e conoscere nuove persone con le simili interessi musicali, con le quali l'utente può chattare ed organizzarsi per suonare insieme;
+    \item[-] cercare luoghi dove poter suonare, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi;
+    \item[-] creare e salvare una lista di amici con i quali l'utente può chattare ed organizzarsi per suonare insieme;
+    \item[-] visualizzare la lista degli amici;
+    \item[-] visualizzare lo storico delle sessioni di allenamento;
+    \item[-] contattare i profili degli utenti suggeriti;
+    \item[-] contattare i profili dei luoghi suggeriti;
+\end{itemize}
+
+\subsection{Scopo del documento}
+
+Lo scopo del documento è quello di descrivere i requisiti funzionali del progetto.
+Tali requisiti sono stati individuati per tre tipologie di attori:
+\begin{itemize}
+    \item Utente non autenticato
+    \item Utente autenticato
+    \item Amministratore
+\end{itemize}
+
+\section{Requisiti funzionali}
+
+\subsection{Utente non autenticato}
+
+L'utente non autenticato è colui che non ha ancora effettuato il login al sistema oppure non è ancora registrato al sistema. Questo tipo di utente ha un accesso ristretto alle funzionalità del sistema.
+
+\subsubsection{RF1 - Registrazione}
+
+L'utente non autenticato può registrarsi al sistema, creando un profilo che permetta all'utente di mostrare le proprie preferenze musicali e abilità, oltre ai propri dati anagrafici ed eventuali contatti. Per registrarsi sarà necessario inserire email e password.
+Quest'ultima dovrà essere confermata tramite un secondo inserimento e dovrà essere composta da almeno 8 caratteri, di cui almeno una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale. Una volta completata la registrazione, l'utente riceverà una mail di conferma all'indirizzo email inserito. In alternativa, sarà possibile registrarsi tramite account di terze parti (Google, Facebook, Twitter, Instagram, etc.).
+
+
+%Non-authorised users can register for the system by creating a profile that allows them to show their musical preferences and skills, as well as their personal and contact details. To register, it will be necessary to enter an email and password.
+%The latter must be confirmed by a second entry and must consist of at least eight characters, including at least one upper-case letter, one lower-case letter, a number and a special character. Once registration is complete, the user will receive a confirmation e-mail at the e-mail address entered.
+
+\subsubsection{RF2 - Login}
+
+L'utente non autenticato può effettuare il login al sistema, inserendo le stesse credenziali utilizzate in fase di registrazione.
+
+\subsubsection{RF3 - Recupero password}
+
+L'utente non autenticato può richiedere il recupero della password, inserendo l'email utilizzata in fase di registrazione. L'utente riceverà una mail contenente un link per la reimpostazione della password, seguendo le medesime regole di validazione della password in fase di registrazione.
+
+\subsubsection{RF4 - Cercare un posto dove suonare}
+
+L'utente non autenticato, dovrà essere in grado di vedere i luoghi dove poter suonare, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi. Per ogni luogo, l'utente potrà vedere la descrizione, la posizione e i contatti.
+
+\subsection{Utente autenticato}
+
+L'utente autenticato è colui che ha effettuato il login al sistema. Questo tipo di utente ha un accesso completo alle funzionalità del sistema eccetto quelle riservate all'amministratore.
+
+\subsubsection{RF5 - Disconnesione}
+
+L'utente autenticato può effettuare la disconnessione dal sistema.
+
+\subsubsection{RF6 - Modifica profilo}
+
+L'utente autenticato può modificare il proprio profilo, inserendo o modificando le proprie preferenze musicali e abilità, oltre ai propri dati anagrafici ed eventuali contatti. Inoltre, se ne è in possesso, l'utente potrà usare uno strumento smart capace di riconoscere l'attuale contesto in cui si trova l'utente, in modo da poter aggiornare automaticamente i dati.
+
+\subsubsection{RF7 - Cercare un compagno}
+
+L'utente autenticato può cercare un compagno con il quale suonare insieme, il quale verrà suggerito dal sistema in base alle proprie preferenze musicali e abilità, oltre che in base alla posizione geografica. L'utente potrà vedere i profili degli altri utenti, con i quali potrà chattare ed organizzarsi per suonare insieme.
+
+\subsubsection{RF8 - Aggiungere un amico}
+
+L'utente autenticato può mandare una richiesta d'amicizia ad un altro utente, il quale potrà accettare o rifiutare la richiesta. In caso la richiesta venga accettata, l'utente sarà poi in grado di vedere la disponibilità dell'amico (online/assente/offline).
+
+\subsubsection{RF9 - Cercare un posto dove suonare}
+
+L'utente autenticato può cercare un posto dove poter suonare tra quelli suggeriti dal sistema, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi. I luoghi verranno suggeriti in base alle preferenze musicali e abilità dell'utente, oltre che in base alla posizione geografica. Per ogni luogo, l'utente potrà vedere la descrizione, la posizione e i contatti.
+
+\subsubsection{RF10 - Visualizzare la lista degli amici}
+
+L'utente autenticato può visualizzare la lista degli amici, con i quali potrà chattare ed organizzarsi per suonare insieme.
+
+\subsubsection{RF11 - Visualizzare lo storico delle sessioni di allenamento}
+
+L'utente autenticato può visualizzare lo storico delle sessioni di allenamento e vedere i progressi fatti.
+
+\subsubsection{RF12 - Contattare i profili degli utenti suggeriti}
+
+L'utente autenticato può contattare i profili degli utenti suggeriti dal sistema, iniziando una chat con loro.
+
+\subsubsection{RF13 - Contattare i profili dei luoghi suggeriti}
+
+L'utente autenticato può contattare i proprietari dei luoghi suggeriti dal sistema, iniziando una chat con loro.
+
+
+
+
+
+\end{document}
