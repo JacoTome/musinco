@@ -3,10 +3,13 @@
 \author{Jacopo Tomelleri}
 \date{Maggio 2023}
 \hyphenation{applicazione}
-\usepackage{graphicx}
+\usepackage{graphicx, makeidx, hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
 % Commento
 \begin{document}
 \maketitle
+\newpage
+\tableofcontents
 \newpage
 
 \begin{abstract}
@@ -59,7 +62,7 @@ Quest'ultima dovrà essere confermata tramite un secondo inserimento e dovrà es
 
 \subsubsection{RF2 - Login}
 
-L'utente non autenticato può effettuare il login al sistema, inserendo le stesse credenziali utilizzate in fase di registrazione.
+L'utente non autenticato può effettuare il login al sistema, inserendo le stesse credenziali utilizzate in fase di registrazione, oppure accedenso tramite account di terze parti (Google, Facebook, Twitter, Instagram, etc.).
 
 \subsubsection{RF3 - Recupero password}
 
@@ -69,6 +72,7 @@ L'utente non autenticato può richiedere il recupero della password, inserendo l
 
 L'utente non autenticato, dovrà essere in grado di vedere i luoghi dove poter suonare, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi. Per ogni luogo, l'utente potrà vedere la descrizione, la posizione e i contatti.
 
+\newpage
 \subsection{Utente autenticato}
 
 L'utente autenticato è colui che ha effettuato il login al sistema. Questo tipo di utente ha un accesso completo alle funzionalità del sistema eccetto quelle riservate all'amministratore.
@@ -91,7 +95,7 @@ L'utente autenticato può mandare una richiesta d'amicizia ad un altro utente, i
 
 \subsubsection{RF9 - Cercare un posto dove suonare}
 
-L'utente autenticato può cercare un posto dove poter suonare tra quelli suggeriti dal sistema, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi. I luoghi verranno suggeriti in base alle preferenze musicali e abilità dell'utente, oltre che in base alla posizione geografica. Per ogni luogo, l'utente potrà vedere la descrizione, la posizione e i contatti.
+L'utente autenticato può cercare un posto dove poter suonare tra quelli suggeriti dal sistema, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi. I luoghi verranno suggeriti in base alla posizione geografica, oltre che alle preferenze musicali dell'utente. Per ogni luogo, l'utente potrà vedere la descrizione, la posizione e i contatti.
 
 \subsubsection{RF10 - Visualizzare la lista degli amici}
 
@@ -99,7 +103,7 @@ L'utente autenticato può visualizzare la lista degli amici, con i quali potrà 
 
 \subsubsection{RF11 - Visualizzare lo storico delle sessioni di allenamento}
 
-L'utente autenticato può visualizzare lo storico delle sessioni di allenamento e vedere i progressi fatti.
+L'utente autenticato può visualizzare lo storico delle sessioni di allenamento e vedere i progressi fatti. Inoltre potrà vedere per ogni sessione di allenamento, la data, la durata e il luogo.
 
 \subsubsection{RF12 - Contattare i profili degli utenti suggeriti}
 
@@ -109,8 +113,44 @@ L'utente autenticato può contattare i profili degli utenti suggeriti dal sistem
 
 L'utente autenticato può contattare i proprietari dei luoghi suggeriti dal sistema, iniziando una chat con loro.
 
+\subsubsection{RF14 - Iniziare una sessione di allenamento}
 
+L'utente autenticato può, dalla sezione dell'applicazione dedicata, iniziare una jam session per esercitarsi, utilizzando le backing track fornite dal sistema.
 
+\subsubsection{RF14.1 - Impostare parametri per sessione di allenamento}
+L'utente potrà scegliere se impostare il genere musicale, il tempo e la tonalità della backing track, oppure utilizzare quelle che il sistema suggerisce in base al contesto musicale attuale.
 
+\subsubsection{RF14.2 - Impostare promemoria per sessioni di allenamento}
+
+L'utente autenticato può impostare dei promemoria per le sessioni di allenamento. Il sistema notificherà l'utente prima dell'inizio della sessione di allenamento.
+
+\subsubsection{RF15 - Contattare un amico}
+
+L'utente autenticato può contattare un amico, iniziando una chat con lui, o riaprendo una chat già esistente.
+
+\subsubsection{RF16 - Visualizzare cosa stanno suonando gli amici}
+
+In una sezione dedicata, l'utente autenticato può vedere cosa stanno suonando gli amici. Cliccando sul profilo dell'amico può scegliere se chattare con lui o iniziare a suonare con il sistema in base al genere suonato dall'amico.
+\newpage
+
+\section{Utilizzo dell'ontologia}
+
+Le classi dell'ontologia interessate per la realizzazione del progetto sono le seguenti:
+\begin{itemize}
+    \item \href{https://schema.org/MusicVenue}{MusicVenue} e relative sottoclassi per rappresentare i luoghi dove poter suonare;
+    \item \href{http://purl.org/ontology/musico#HumanMusician}{HumanMusician} per rappresentare gli utenti con le seguenti proprietà:
+          \begin{itemize}
+              \item  \href{http://purl.org/ontology/musico#professional_level}{professional\_level} Per rappresentare il livello di professionalità di un utente;
+              \item \href{http://purl.org/ontology/musico#plays_instrument}{plays\_instrument} Per rappresentare gli strumenti suonati da un utente;
+          \end{itemize}
+    \item \href{http://purl.org/ontology/mo/Genre}{Genre} Per rappresentare i generi musicali, con le seguenti proprietà:
+          \begin{itemize}
+              \item \href{http://purl.org/ontology/musico\#plays\_genre}{plays\_genre} per rappresentare il genere musicale che sta suonando un utente;
+          \end{itemize}
+    \item \href{http://xmlns.com/foaf/0.1/based_near}{based\_near} per rappresentare la vicinanza geografica tra due entità;
+    \item \href{http://purl.org/ontology/musico/SelfLearning}{SelfLearning} per rappresentare le sessioni di allenamento del musicista
+\end{itemize}
+
+L'ontologia non prevede la rappresentazione delle credenziali di accesso, perciò queste verranno memorizzate in un database relazionale.
 
 \end{document}

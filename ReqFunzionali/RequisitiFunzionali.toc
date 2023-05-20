@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Descrizione generale}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Scopo del documento}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Requisiti funzionali}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Utente non autenticato}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}RF1 - Registrazione}{4}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}RF2 - Login}{4}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}RF3 - Recupero password}{4}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}RF4 - Cercare un posto dove suonare}{5}{subsubsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.2}Utente autenticato}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}RF5 - Disconnesione}{6}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}RF6 - Modifica profilo}{6}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}RF7 - Cercare un compagno}{6}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}RF8 - Aggiungere un amico}{6}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}RF9 - Cercare un posto dove suonare}{6}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}RF10 - Visualizzare la lista degli amici}{7}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}RF11 - Visualizzare lo storico delle sessioni di allenamento}{7}{subsubsection.2.2.7}%
+\contentsline {subsubsection}{\numberline {2.2.8}RF12 - Contattare i profili degli utenti suggeriti}{7}{subsubsection.2.2.8}%
+\contentsline {subsubsection}{\numberline {2.2.9}RF13 - Contattare i profili dei luoghi suggeriti}{7}{subsubsection.2.2.9}%
+\contentsline {subsubsection}{\numberline {2.2.10}RF14 - Iniziare una sessione di allenamento}{7}{subsubsection.2.2.10}%
+\contentsline {subsubsection}{\numberline {2.2.11}RF14.1 - Impostare parametri per sessione di allenamento}{7}{subsubsection.2.2.11}%
+\contentsline {subsubsection}{\numberline {2.2.12}RF14.2 - Impostare promemoria per sessioni di allenamento}{7}{subsubsection.2.2.12}%
+\contentsline {subsubsection}{\numberline {2.2.13}RF15 - Contattare un amico}{7}{subsubsection.2.2.13}%
+\contentsline {subsubsection}{\numberline {2.2.14}RF16 - Visualizzare cosa stanno suonando gli amici}{8}{subsubsection.2.2.14}%
+\contentsline {section}{\numberline {3}Utilizzo dell'ontologia}{9}{section.3}%

@@ -1,0 +1,15 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX fo: <http://www.w3.org/1999/XSL/Format#>
+PREFIX schema: <https://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX musico: <http://purl.org/ontology/musico#> 
+PREFIX ex: <http://www.example.audio/>
+
+SELECT DISTINCT ?musician ?level
+WHERE {
+  ?musician foaf:based_near ex:London ;
+            musico:professional_level "Amateur"
+}
+LIMIT 25
