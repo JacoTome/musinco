@@ -1,10 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1684594014 "c:/Users/jacot/Documents/musinco/ReqFunzionali/RequisitiFunzionali.tex" "RequisitiFunzionali.pdf" "RequisitiFunzionali" 1684594014 0
-  "RequisitiFunzionali.aux" 1684594014 4167 ec1f7fc2f2c9de8f702f01ccc27e898d "pdflatex"
-  "RequisitiFunzionali.out" 1684594014 5771 4d5bb7ccdcbfb9f2a47ba7ebce5dd76e "pdflatex"
-  "RequisitiFunzionali.tex" 1684594011 10204 3643c3d8613cc5b22cf930eaf03b07d3 ""
-  "RequisitiFunzionali.toc" 1684594014 2588 aadf18573c02c993c4b089e4b944fbf3 "pdflatex"
-  "c:/Users/jacot/Documents/musinco/ReqFunzionali/RequisitiFunzionali.tex" 1684594011 10204 3643c3d8613cc5b22cf930eaf03b07d3 ""
+["pdflatex"] 1684852885 "c:/Users/jacot/Documents/musinco/ReqFunzionali/RequisitiFunzionali.tex" "RequisitiFunzionali.pdf" "RequisitiFunzionali" 1684852888 0
+  "RequisitiFunzionali.aux" 1684852886 1791 6fa12e86021db4af31d5c60b60015166 "pdflatex"
+  "RequisitiFunzionali.out" 1684852886 1051 6bb58f17324a46cec8b747b62ae2e9c0 "pdflatex"
+  "RequisitiFunzionali.tex" 1684852885 14297 dba10db22a3c2ea410eeb3a4932888e7 ""
+  "RequisitiFunzionali.toc" 1684852886 566 1c4d65a8ab2241e9c47c1a1ed052fdb0 "pdflatex"
+  "c:/Users/jacot/Documents/musinco/ReqFunzionali/RequisitiFunzionali.tex" 1684852885 14297 dba10db22a3c2ea410eeb3a4932888e7 ""
   "d:/Latex/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1684247388 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "d:/Latex/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1684248388 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "d:/Latex/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1684247960 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -56,6 +56,7 @@
   "d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty" 1684248630 18387 8f900a490197ebaf93c02ae9476d4b09 ""
   "d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty" 1684248630 8010 a8d949cbdbc5c983593827c9eec252e1 ""
   "d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty" 1684248630 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
+  "d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics/lscape.sty" 1684248630 1822 5e4f855a9ecb640f34881e4b457fa9aa ""
   "d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx" 1684248630 2885 9c645d672ae17285bba324998918efd8 ""
   "d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty" 1684248630 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
   "d:/Latex/texlive/2023/texmf-dist/tex/latex/hycolor/hycolor.sty" 1684248842 17914 4c28a13fc3d975e6e81c9bea1d697276 ""
@@ -71,6 +72,7 @@
   "d:/Latex/texlive/2023/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty" 1684249393 5766 13a9e8766c47f30327caf893ece86ac8 ""
   "d:/Latex/texlive/2023/texmf-dist/tex/latex/refcount/refcount.sty" 1684251034 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "d:/Latex/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1684251059 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
+  "d:/Latex/texlive/2023/texmf-dist/tex/latex/tools/longtable.sty" 1684251980 12892 af5f5e872a6e322f3e5ba2c881288a56 ""
   "d:/Latex/texlive/2023/texmf-dist/tex/latex/url/url.sty" 1684252277 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "d:/Latex/texlive/2023/texmf-dist/web2c/texmf.cnf" 1684246312 40967 d940221f8762fd5848760382d97d1226 ""
   "d:/Latex/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1684252740 4683021 51620474f030a309a3a3f252d35d109b ""

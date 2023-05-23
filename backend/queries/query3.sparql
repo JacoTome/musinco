@@ -1,0 +1,20 @@
+# Generi musicali suonati dalle persone vicine all'utente (nella stessa città)     
+
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX mo: <http://purl.org/ontology/mo/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX ex: <http://example.org/>
+PREFIX musico: <http://purl.org/ontology/musico#> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT DISTINCT ?genre
+WHERE{
+  # ?user è l'utente interessato
+  # sostituibile con  [ musico:hasUniqueID 1234 ]
+  ?user foaf:based_near ?city.	
+  ?others foaf:based_near ?city;
+          musico:in_participation/musico:played_musical_work/mo:genre ?genre .
+  FILTER(?user != ?others)
+}

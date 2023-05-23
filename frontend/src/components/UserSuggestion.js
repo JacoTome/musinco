@@ -11,14 +11,15 @@ export default class UserSuggestion extends Component {
 	}
 
 	async componentDidMount() {
-		const url = "https://jsonplaceholder.typicode.com/users";
+		const url = "http://localhost:3002/2";
 		const response = await fetch(url);
 		const data = await response.json();
-		this.setState({ user: data, loading: false });
+		this.setState({ user: data });
 	}
 
+	
 	createCard = (user) => {
-		return <Card user={user} key={user.name} />;
+		return <Card user={user.musician.value} key={user.name} />;
 	};
 
 	render() {
@@ -26,10 +27,10 @@ export default class UserSuggestion extends Component {
 			<div style={{ display: "block", marginTop: "200px" }}>
 				<h1>User Matching With You </h1>
 				<div style={{ display: "flex" }}>
-					{this.state.loading || !this.state.user ? (
-						<div>Loading...</div>
-					) : (
-						this.state.user.map(this.createCard)
+					{
+						this.state.user.map(obj => {
+							return <Card user={obj} key={obj.musician.value} />							
+					}
 					)}
 				</div>
 			</div>

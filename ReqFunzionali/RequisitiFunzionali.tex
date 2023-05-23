@@ -2,8 +2,9 @@
 \title{Requisiti Funzionali}
 \author{Jacopo Tomelleri}
 \date{Maggio 2023}
-\hyphenation{applicazione}
+\hyphenation{applicazione account}
 \usepackage{graphicx, makeidx, hyperref}
+\usepackage{longtable} % add this line to the preamble
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
 % Commento
 \begin{document}
@@ -46,89 +47,128 @@ Tali requisiti sono stati individuati per tre tipologie di attori:
 \end{itemize}
 
 \section{Requisiti funzionali}
-
 \subsection{Utente non autenticato}
 
 L'utente non autenticato è colui che non ha ancora effettuato il login al sistema oppure non è ancora registrato al sistema. Questo tipo di utente ha un accesso ristretto alle funzionalità del sistema.
 
-\subsubsection{RF1 - Registrazione}
 
-L'utente non autenticato può registrarsi al sistema, creando un profilo che permetta all'utente di mostrare le proprie preferenze musicali e abilità, oltre ai propri dati anagrafici ed eventuali contatti. Per registrarsi sarà necessario inserire email e password.
+
+\begin{table}[h]
+    \centering
+    \caption{Requisiti funzionali per l'utente non autenticato.}
+    \label{tab:requisiti utente non autenticato}
+    \begin{tabular}{|c|p{5cm}|p{5cm}|}
+        \hline \textbf{ID}          & \textbf{Nome}                 & \textbf{Descrizione}                                                \\  \hline
+        \hline \hyperlink{RF1}{RF1} & Registrazione                 & L'utente non autenticato può registrarsi al sistema.                \\ \hline
+        \hline \hyperlink{RF2}{RF2} & Login                         & L'utente non autenticato può effettuare il login al sistema.        \\ \hline
+        \hline \hyperlink{RF3}{RF3} & Recupero password             & L'utente non autenticato può richiedere il recupero della password. \\ \hline
+        \hline \hyperlink{RF4}{RF4} & Cercare un posto dove suonare & L'utente non autenticato può cercare un posto dove suonare.         \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\subsubsection*{\hypertarget{RF1}{RF1 - Registrazione}}
+
+Per registrarsi sarà necessario inserire email e password.
 Quest'ultima dovrà essere confermata tramite un secondo inserimento e dovrà essere composta da almeno 8 caratteri, di cui almeno una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale. Una volta completata la registrazione, l'utente riceverà una mail di conferma all'indirizzo email inserito. In alternativa, sarà possibile registrarsi tramite account di terze parti (Google, Facebook, Twitter, Instagram, etc.).
 
 
 %Non-authorised users can register for the system by creating a profile that allows them to show their musical preferences and skills, as well as their personal and contact details. To register, it will be necessary to enter an email and password.
 %The latter must be confirmed by a second entry and must consist of at least eight characters, including at least one upper-case letter, one lower-case letter, a number and a special character. Once registration is complete, the user will receive a confirmation e-mail at the e-mail address entered.
 
-\subsubsection{RF2 - Login}
+\subsubsection*{\hypertarget{RF2}{RF2 - Login}}
 
 L'utente non autenticato può effettuare il login al sistema, inserendo le stesse credenziali utilizzate in fase di registrazione, oppure accedenso tramite account di terze parti (Google, Facebook, Twitter, Instagram, etc.).
 
-\subsubsection{RF3 - Recupero password}
+\subsubsection*{\hypertarget{RF3}{RF3 - Recupero password}}
 
 L'utente non autenticato può richiedere il recupero della password, inserendo l'email utilizzata in fase di registrazione. L'utente riceverà una mail contenente un link per la reimpostazione della password, seguendo le medesime regole di validazione della password in fase di registrazione.
 
-\subsubsection{RF4 - Cercare un posto dove suonare}
+\subsubsection*{\hypertarget{RF4}{RF4 - Cercare un posto dove suonare}}
 
 L'utente non autenticato, dovrà essere in grado di vedere i luoghi dove poter suonare, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi. Per ogni luogo, l'utente potrà vedere la descrizione, la posizione e i contatti.
+
+L'utente non autenticato potrà contattare i luoghi suggeriti, tramite i contatti forniti, via chat o tramite chiamata.
 
 \newpage
 \subsection{Utente autenticato}
 
-L'utente autenticato è colui che ha effettuato il login al sistema. Questo tipo di utente ha un accesso completo alle funzionalità del sistema eccetto quelle riservate all'amministratore.
+L'utente autenticato è colui che ha effettuato il login al sistema. Questo tipo di utente ha un accesso completo alle funzionalità del sistema eccetto quelle riservate all'amministratore. Di seguito sono riassunti i requisiti funzionali per l'utente autenticato.
 
-\subsubsection{RF5 - Disconnesione}
+\begin{longtable}{|c|p{5cm}|p{7cm}|}
+
+    \hline \textbf{ID}            & \textbf{Nome}                               & \textbf{Descrizione}                                                                                                \\  \hline
+    \hline \hyperlink{RF5}{RF5}   & Disconnessione                              & L'utente autenticato può effettuare la disconnessione dal sistema.                                                  \\ \hline
+    \hline\hyperlink{RF6}{RF6}    & Modifica profilo                            & L'utente autenticato può modificare il proprio profilo.                                                             \\ \hline
+    \hline \hyperlink{RF7}{RF7}   & Cercare un compagno                         & L'utente autenticato può cercare un compagno per suonare tra quelli suggeriti dal sistema.                          \\ \hline
+    \hline \hyperlink{RF8}{RF8}   & Aggiungere un amico                         & L'utente autenticato può aggiungere un altro utente alla propria lista amici.                                       \\ \hline
+    \hline \hyperlink{RF9}{RF9}   & Cercare un luogo                            & L'utente autenticato può cercare un luogo dove suonare tra quelli suggeriti dal sistema.                            \\ \hline
+    \hline \hyperlink{RF10}{RF10} & Visualizzare la lista degli amici           & L'utente autenticato può visualizzare la lista degli amici, che siano online o meno.                                \\ \hline
+    \hline \hyperlink{RF11}{RF11} & Visualizzare lo storico degli allenamenti   & L'utente autenticato può visualizzare lo storico degli allenamenti, con i relativi dettagli.                        \\ \hline
+    \hline \hyperlink{RF12}{RF12} & Contattare un utente                        & L'utente autenticato può contattare un altro utente, amico o meno, tramite chat.                                    \\ \hline
+    \hline \hyperlink{RF13}{RF13} & Contattare i luoghi suggeriti               & L'utente autenticato può contattare i luoghi suggeriti, tramite i contatti forniti, via chat o tramite chiamata.    \\ \hline
+    \hline \hyperlink{RF14}{RF14} & Iniziare una sessione di allenamento        & L'utente autenticato può iniziare una sessione di allenamento suonando con delle backing track fornite dal sistema. \\ \hline
+    \hline \hyperlink{RF15}{RF15} & Visualizzare cosa stanno suonando gli amici & L'utente autenticato può visualizzare che genere musicale stanno suonando i suoi amici.                             \\ \hline
+\end{longtable}
+
+\subsubsection*{\hypertarget{RF5}{RF5 - Disconnesione}}
 
 L'utente autenticato può effettuare la disconnessione dal sistema.
 
-\subsubsection{RF6 - Modifica profilo}
+\subsubsection*{\hypertarget{RF6}{RF6 - Modifica profilo}}
+L'utente autenticato può modificare il proprio profilo, inserendo o modificando le proprie preferenze musicali e abilità, oltre ai propri dati anagrafici ed eventuali contatti.
 
-L'utente autenticato può modificare il proprio profilo, inserendo o modificando le proprie preferenze musicali e abilità, oltre ai propri dati anagrafici ed eventuali contatti. Inoltre, se ne è in possesso, l'utente potrà usare uno strumento smart capace di riconoscere l'attuale contesto in cui si trova l'utente, in modo da poter aggiornare automaticamente i dati.
 
-\subsubsection{RF7 - Cercare un compagno}
+Se ne è in possesso, l'utente potrà collegare uno strumento smart capace di riconoscere l'attuale contesto musicale in cui si trova l'utente, in modo da poter aggiornare automaticamente i dati.
+
+
+L'utente autenticato può modificare le proprie credenziali di accesso dell' account, inserendo una nuova email e/o una nuova password. La password dovrà essere confermata tramite un secondo inserimento e dovrà essere composta da almeno 8 caratteri, di cui almeno una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale.
+
+
+\subsubsection*{\hypertarget{RF7}{RF7 - Cercare un compagno}}
 
 L'utente autenticato può cercare un compagno con il quale suonare insieme, il quale verrà suggerito dal sistema in base alle proprie preferenze musicali e abilità, oltre che in base alla posizione geografica. L'utente potrà vedere i profili degli altri utenti, con i quali potrà chattare ed organizzarsi per suonare insieme.
 
-\subsubsection{RF8 - Aggiungere un amico}
+\subsubsection*{\hypertarget{RF8}{RF8 - Aggiungere un amico}}
 
 L'utente autenticato può mandare una richiesta d'amicizia ad un altro utente, il quale potrà accettare o rifiutare la richiesta. In caso la richiesta venga accettata, l'utente sarà poi in grado di vedere la disponibilità dell'amico (online/assente/offline).
 
-\subsubsection{RF9 - Cercare un posto dove suonare}
+
+\subsubsection*{\hypertarget{RF9}{RF9 - Cercare un luogo}}
+
 
 L'utente autenticato può cercare un posto dove poter suonare tra quelli suggeriti dal sistema, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi. I luoghi verranno suggeriti in base alla posizione geografica, oltre che alle preferenze musicali dell'utente. Per ogni luogo, l'utente potrà vedere la descrizione, la posizione e i contatti.
 
-\subsubsection{RF10 - Visualizzare la lista degli amici}
+\subsubsection*{\hypertarget{RF10}{RF10 - Visualizzare la lista degli amici}}
 
 L'utente autenticato può visualizzare la lista degli amici, con i quali potrà chattare ed organizzarsi per suonare insieme.
 
-\subsubsection{RF11 - Visualizzare lo storico delle sessioni di allenamento}
+
+L'utente autenticato potrà riorganizzare la lista degli amici, in base alla disponibilità degli stessi (online/assente/offline), oppure creare delle liste personalizzate.
+
+
+\subsubsection*{\hypertarget{RF11}{RF11 - Visualizzare lo storico degli allenamenti}}
 
 L'utente autenticato può visualizzare lo storico delle sessioni di allenamento e vedere i progressi fatti. Inoltre potrà vedere per ogni sessione di allenamento, la data, la durata e il luogo.
 
-\subsubsection{RF12 - Contattare i profili degli utenti suggeriti}
+\subsubsection*{\hypertarget{RF12}{RF12 - Contattare un utente}}
 
 L'utente autenticato può contattare i profili degli utenti suggeriti dal sistema, iniziando una chat con loro.
 
-\subsubsection{RF13 - Contattare i profili dei luoghi suggeriti}
+\subsubsection*{\hypertarget{RF13}{RF13 - Contattare i luoghi suggeriti}}
 
 L'utente autenticato può contattare i proprietari dei luoghi suggeriti dal sistema, iniziando una chat con loro.
 
-\subsubsection{RF14 - Iniziare una sessione di allenamento}
+\subsubsection*{\hypertarget{RF14}{RF14 - Iniziare una sessione di allenamento}}
 
 L'utente autenticato può, dalla sezione dell'applicazione dedicata, iniziare una jam session per esercitarsi, utilizzando le backing track fornite dal sistema.
 
-\subsubsection{RF14.1 - Impostare parametri per sessione di allenamento}
 L'utente potrà scegliere se impostare il genere musicale, il tempo e la tonalità della backing track, oppure utilizzare quelle che il sistema suggerisce in base al contesto musicale attuale.
 
-\subsubsection{RF14.2 - Impostare promemoria per sessioni di allenamento}
 
 L'utente autenticato può impostare dei promemoria per le sessioni di allenamento. Il sistema notificherà l'utente prima dell'inizio della sessione di allenamento.
 
-\subsubsection{RF15 - Contattare un amico}
-
-L'utente autenticato può contattare un amico, iniziando una chat con lui, o riaprendo una chat già esistente.
-
-\subsubsection{RF16 - Visualizzare cosa stanno suonando gli amici}
+\subsubsection*{\hypertarget{RF15}{RF15 - Visualizzare cosa stanno suonando gli amici}}
 
 In una sezione dedicata, l'utente autenticato può vedere cosa stanno suonando gli amici. Cliccando sul profilo dell'amico può scegliere se chattare con lui o iniziare a suonare con il sistema in base al genere suonato dall'amico.
 \newpage
