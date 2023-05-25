@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.16)  23 MAY 2023 16:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.16)  25 MAY 2023 16:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -170,67 +170,117 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \c@LT@tables=\count274
 \c@LT@chunks=\count275
 \LT@p@ftn=\toks17
+) (d:/Latex/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count276
+\lst@gtempboxa=\box56
+\lst@token=\toks18
+\lst@length=\count277
+\lst@currlwidth=\dimen148
+\lst@column=\count278
+\lst@pos=\count279
+\lst@lostspace=\dimen149
+\lst@width=\dimen150
+\lst@newlines=\count280
+\lst@lineno=\count281
+\lst@maxwidth=\dimen151
+ (d:/Latex/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count282
+\lst@skipnumbers=\count283
+\lst@framebox=\box57
+) (d:/Latex/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (d:/Latex/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+ (d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+ (d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+) (d:/Latex/texlive/2023/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+Package: inconsolata 2019/05/17 v1.12
+ `inconsolata-zi4' v1.12, 2019/05/17 Text macros for Inconsolata (msharpe) (d:/Latex/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (d:/Latex/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (d:/Latex/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex (d:/Latex/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks19
+\XKV@tempa@toks=\toks20
+)
+\XKV@depth=\count284
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\zifour@ocount=\count285
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 8.
  (d:/Latex/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count276
-\l__pdf_internal_box=\box56
+\l__color_backend_stack_int=\count286
+\l__pdf_internal_box=\box58
 ) (./RequisitiFunzionali.aux)
 \openout1 = `RequisitiFunzionali.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
  (d:/Latex/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count277
-\scratchdimen=\dimen148
-\scratchbox=\box57
-\nofMPsegments=\count278
-\nofMParguments=\count279
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count280
-\MPscratchDim=\dimen149
-\MPnumerator=\count281
-\makeMPintoPDFobject=\count282
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count287
+\scratchdimen=\dimen152
+\scratchbox=\box59
+\nofMPsegments=\count288
+\nofMParguments=\count289
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count290
+\MPscratchDim=\dimen153
+\MPnumerator=\count291
+\makeMPintoPDFobject=\count292
+\everyMPtoPDFconversion=\toks22
 ) (d:/Latex/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (d:/Latex/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) (d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
- (d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 149.
- (d:/Latex/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 10.
+))
+Package hyperref Info: Link coloring ON on input line 53.
  (./RequisitiFunzionali.out) (./RequisitiFunzionali.out)
 \@outlinefile=\write3
 \openout3 = `RequisitiFunzionali.out'.
 
+\c@lstlisting=\count293
+ (d:/Latex/texlive/2023/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 12.
+(Font)              <14.4> on input line 55.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 12.
+(Font)              <7> on input line 55.
  [1
 
 {d:/Latex/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./RequisitiFunzionali.toc
@@ -244,63 +294,112 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `RequisitiFunzionali.toc'.
 
- [2] [3]
-Underfull \hbox (badness 5403) in paragraph at lines 62--62
+ [2]
+Overfull \hbox (33.47061pt too wide) in paragraph at lines 65--67
+\OT1/cmr/m/n/12 erenze mu-si-cali dell'utente, tramite l'utilizzo dell'ontologia MU-SICO. L'applicazione
+ []
+
+
+Overfull \hbox (0.2265pt too wide) in paragraph at lines 78--79
+[]\OT1/cmr/m/n/12 visualizzare che generi mu-si-cali ven-gono suonati nei din-torni dell'utente; 
+ []
+
+[3{d:/Latex/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Underfull \hbox (badness 5403) in paragraph at lines 105--105
 []\OT1/cmr/m/n/12 L'utente non au-t-en-ti-cato
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 63--63
+Underfull \hbox (badness 5403) in paragraph at lines 106--106
 []\OT1/cmr/m/n/12 L'utente non au-t-en-ti-cato
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 64--64
+Underfull \hbox (badness 5403) in paragraph at lines 107--107
 []\OT1/cmr/m/n/12 L'utente non au-t-en-ti-cato
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--65
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
 []\OT1/cmr/m/n/12 Cercare un posto dove
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 65--65
+Underfull \hbox (badness 5403) in paragraph at lines 108--108
 []\OT1/cmr/m/n/12 L'utente non au-t-en-ti-cato
  []
 
-[4{d:/Latex/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5]
-Underfull \hbox (badness 1314) in paragraph at lines 106--106
+
+Underfull \hbox (badness 5403) in paragraph at lines 109--109
+[]\OT1/cmr/m/n/12 L'utente non au-t-en-ti-cato
+ []
+
+[4] [5]
+Underfull \hbox (badness 1314) in paragraph at lines 156--156
 []|\OT1/cmr/m/n/12 Visualizzare la lista degli
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
 []|\OT1/cmr/m/n/12 Visualizzare cosa stanno
  []
 
 
-Overfull \hbox (15.49808pt too wide) in alignment at lines 98--112
+Underfull \hbox (badness 6348) in paragraph at lines 163--163
+[]|\OT1/cmr/m/n/12 Modificare i promemo-ria
+ []
+
+
+Underfull \hbox (badness 2221) in paragraph at lines 165--166
+[]|\OT1/cmr/m/n/12 L'utente au-t-en-ti-cato pu^^Ro ge-stire le
+ []
+
+
+Overfull \hbox (15.49808pt too wide) in alignment at lines 149--168
  [] [] [] 
  []
 
-[6] [7] [8] [9] (./RequisitiFunzionali.aux)
+[6]
+pdfTeX warning (ext4): destination with the same identifier (name{RF5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.170 ...*{\hypertarget{RF5}{RF5 - Disconnesione}}
+                                                   [7] [8] [9] (d:/Latex/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+) (d:/Latex/texlive/2023/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2023/02/27 1.9 listings language file
+) (d:/Latex/texlive/2023/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2023/02/27 1.9 listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 269.
+LaTeX Font Info:    Trying to load font information for OT1+zi4 on input line 269.
+ (d:/Latex/texlive/2023/texmf-dist/tex/latex/inconsolata/ot1zi4.fd
+File: ot1zi4.fd 2018/01/14 OT1/zi4 (Inconsolata)
+)
+LaTeX Font Info:    Font shape `OT1/zi4/m/n' will be
+(Font)              scaled to size 12.0pt on input line 269.
+ (../backend/queries/query2.sparql
+Overfull \hbox (20.40417pt too wide) in paragraph at lines 12--13
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (../backend/queries/query3.sparql) [10{d:/Latex/texlive/2023/texmf-dist/fonts/enc/dvips/inconsolata/i4-ot1-0.enc}] (../backend/queries/query4.sparql) [11] (./RequisitiFunzionali.aux)
 Package rerunfilecheck Info: File `RequisitiFunzionali.out' has not changed.
-(rerunfilecheck)             Checksum: 6BB58F17324A46CEC8B747B62AE2E9C0;1051.
+(rerunfilecheck)             Checksum: 210BC77499316816908A271540B23328;1575.
  ) 
 Here is how much of TeX's memory you used:
- 8721 strings out of 476046
- 138212 string characters out of 5791032
- 1867993 words of memory out of 5000000
- 29011 multiletter control sequences out of 15000+600000
- 518400 words of font info for 52 fonts, out of 8000000 for 9000
+ 11317 strings out of 476046
+ 174967 string characters out of 5791032
+ 1891993 words of memory out of 5000000
+ 31488 multiletter control sequences out of 15000+600000
+ 517996 words of font info for 51 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 75i,11n,76p,523b,496s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on RequisitiFunzionali.pdf (9 pages, 95322 bytes).
+ 75i,11n,76p,523b,1346s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><d:/Latex/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on RequisitiFunzionali.pdf (11 pages, 107362 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 282 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

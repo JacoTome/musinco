@@ -1,0 +1,12 @@
+# Luoghi vicini all'utente dove puo' suonare
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX schema:<https://schema.org/docs/schemaorg.owl> 
+
+WHERE {
+    #?user mo:uuid 123 .
+    ?user foaf:based_near ?location .
+    ?place schema:location ?location .
+    # ?place ha disponibilita'?
+    # ?place ha strumenti?
+    # ?place e' aperto?
+}

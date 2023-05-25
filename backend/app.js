@@ -37,6 +37,7 @@ async function queryData(query) {
 
 async function insertData(query) {
   await client.query.update(query);
+  
 }
 
 app.get("/", (req, res) => {
