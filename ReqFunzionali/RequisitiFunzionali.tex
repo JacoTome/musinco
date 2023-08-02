@@ -1,34 +1,16 @@
 \documentclass[12pt, a4paper]{article}
-\title{Requisiti funzionali e uso dell'ontologia}
+\title{Descrizione progetto}
 \date{Maggio 2023}
 \author{Jacopo Tomelleri}
 \hyphenation{applicazione account}
 \usepackage{graphicx, makeidx, hyperref}
-\usepackage{longtable, listings, xcolor,inconsolata} % add this line to the preamble
+\usepackage{longtable,subcaption, listings, xcolor,inconsolata, marginnote} % add this line to the preamble
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.68,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{white},
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{codepurple},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily
-    % breakatwhitespace=false,         
-    % breaklines=false,                 
-    % captionpos=b,                    
-    % keepspaces=true,                 
-    % numbers=left,                    
-    % numbersep=5pt,                  
-    % showspaces=false,                
-    % showstringspaces=false,
-    % showtabs=false,                  
-    tabsize=2
-}
 \lstset{
     backgroundcolor=\color{white},
     commentstyle=\color{codegreen},
@@ -47,35 +29,28 @@
     showtabs=false,                  
     tabsize=2,
 }
-% Commento
-
-
 \begin{document}
 \maketitle
 \newpage
 \tableofcontents
 \newpage
-
-
 \section{Introduzione}
 
-L'idea principale dell'applicazione è quella di trovare all'utente un compagno/a con il quale suonare insieme e/o trovare un locale dove suonare.
-Inoltre, l'applicazione terrà uno storico delle sessioni di allenamento dell'utente, oltre che fare da compagno per le jam session.
+L'idea principale dell'applicazione è quella di trovare all'utente un compagno/a con il quale suonare insieme e/o trovare un locale dove suonare. In caso questo non fosse possibile, l'applicazione permettertà all'utente di esercitarsi e di tenere traccia delle proprie sessioni di allenamento, visualizzando successivamente i progressi fatti.
 
-L'applicazione suggerirà profili di altre persone e luoghi in base alle preferenze musicali dell'utente, tramite l'utilizzo dell'ontologia MUSICO.
-L'applicazione sarà accessibile tramite app su sistemi Android e iOS e tramite web app.
+L'applicazione suggerirà profili di altre persone e luoghi in base alle preferenze musicali dell'utente, tramite l'utilizzo dell'ontologia MUSICO. \\ L'applicazione sarà disponibile tramite web app e sarà quindi accessibile da pc e smartphone.
 
 \subsection{Descrizione generale}
 
 Nel dettaglio, l'applicazione permetterà di:
 \begin{itemize}
     \item[-] registrarsi al sistema, creando un profilo che permetta all'utente di mostrare le proprie preferenze musicali e abilità, oltre ai propri dati anagrafici ed eventuali contatti;
-    \item[-] incontrare e conoscere nuove persone con le simili interessi musicali, con le quali l'utente può chattare ed organizzarsi per suonare insieme;
+    \item[-] incontrare e conoscere nuove persone con simili interessi musicali, con le quali l'utente può chattare ed organizzarsi per suonare insieme;
     \item[-] cercare luoghi dove poter suonare, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi;
     \item[-] creare e salvare una lista di amici con i quali l'utente può chattare ed organizzarsi per suonare insieme;
     \item[-] visualizzare la lista degli amici;
-    \item[-] visualizzare lo storico delle sessioni di allenamento;
-    \item[-] visualizzare che generi musicali vengono suonati nei dintorni dell'utente;
+    \item[-] visualizzare lo storico delle sessioni di allenamento e i progressi fatti;
+    \item[-] visualizzare i generi musicali che vengono suonati dalle altre persone vicino all'utente;
     \item[-] contattare i profili degli utenti suggeriti;
     \item[-] contattare i profili dei luoghi suggeriti;
 \end{itemize}
@@ -83,11 +58,11 @@ Nel dettaglio, l'applicazione permetterà di:
 \subsection{Scopo del documento}
 
 Lo scopo del documento è quello di descrivere i requisiti funzionali del progetto.
-Tali requisiti sono stati individuati per tre tipologie di attori:
+Tali requisiti sono stati divisi per:
 \begin{itemize}
     \item Utente non autenticato
     \item Utente autenticato
-    \item Amministratore
+    \item Sistema
 \end{itemize}
 
 \section{Requisiti funzionali}
@@ -95,47 +70,45 @@ Tali requisiti sono stati individuati per tre tipologie di attori:
 
 L'utente non autenticato è colui che non ha ancora effettuato il login al sistema oppure non è ancora registrato al sistema. Questo tipo di utente ha un accesso ristretto alle funzionalità del sistema.
 
-
-
 \begin{table}[h]
     \centering
     \label{tab:requisiti utente non autenticato}
     \begin{tabular}{|c|p{5cm}|p{5cm}|}
-        \hline \textbf{ID}          & \textbf{Nome}                 & \textbf{Descrizione}                                                          \\  \hline
-        \hline \hyperlink{RF1}{RF1} & Registrazione                 & L'utente non autenticato può registrarsi al sistema.                          \\ \hline
-        \hline \hyperlink{RF2}{RF2} & Login                         & L'utente non autenticato può effettuare il login al sistema.                  \\ \hline
-        \hline \hyperlink{RF3}{RF3} & Recupero password             & L'utente non autenticato può richiedere il recupero della password.           \\ \hline
-        \hline \hyperlink{RF4}{RF4} & Cercare un posto dove suonare & L'utente non autenticato può cercare un posto dove suonare.                   \\ \hline
-        \hline \hyperlink{RF5}{RF5} & Contattare il supporto        & L'utente non autenticato potrà inviare una mail per ricevere supporto tecnico \\ \hline
+        \hline \textbf{ID}            & \textbf{Nome}                 & \textbf{Descrizione}                                                          \\  \hline
+        \hline \hyperlink{RNA1}{RNA1} & Registrazione                 & L'utente non autenticato può registrarsi al sistema.                          \\ \hline
+        \hline \hyperlink{RNA2}{RNA2} & Login                         & L'utente non autenticato può effettuare il login al sistema.                  \\ \hline
+        \hline \hyperlink{RNA3}{RNA3} & Recupero password             & L'utente non autenticato può richiedere il recupero della password.           \\ \hline
+        \hline \hyperlink{RNA4}{RNA4} & Cercare un posto dove suonare & L'utente non autenticato può cercare un posto dove suonare.                   \\ \hline
+        \hline \hyperlink{RNA5}{RNA5} & Contattare il supporto        & L'utente non autenticato potrà inviare una mail per ricevere supporto tecnico \\ \hline
     \end{tabular}
     \caption{Requisiti funzionali per l'utente non autenticato.}
 \end{table}
 
 
-\subsubsection*{\hypertarget{RF1}{RF1 - Registrazione}}
+\subsubsection*{\hypertarget{RNA1}{RNA1 - Registrazione}}
 
 Per registrarsi sarà necessario inserire email e password.
-Quest'ultima dovrà essere confermata tramite un secondo inserimento e dovrà essere composta da almeno 8 caratteri, di cui almeno una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale. Una volta completata la registrazione, l'utente riceverà una mail di conferma all'indirizzo email inserito. In alternativa, sarà possibile registrarsi tramite account di terze parti (Google, Facebook, Twitter, Instagram, etc.).
-
+Quest'ultima dovrà essere confermata tramite un secondo inserimento e dovrà essere composta da almeno 8 caratteri, di cui almeno una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale. Una volta completata la registrazione, l'utente riceverà una mail di conferma all'indirizzo email inserito. In alternativa, sarà possibile registrarsi tramite account di terze parti.
+Il sistema associerà ad ogni utente un uuid che verrà utilizzato per identificare l'utente all'interno del sistema.
 
 %Non-authorised users can register for the system by creating a profile that allows them to show their musical preferences and skills, as well as their personal and contact details. To register, it will be necessary to enter an email and password.
 %The latter must be confirmed by a second entry and must consist of at least eight characters, including at least one upper-case letter, one lower-case letter, a number and a special character. Once registration is complete, the user will receive a confirmation e-mail at the e-mail address entered.
 
-\subsubsection*{\hypertarget{RF2}{RF2 - Login}}
+\subsubsection*{\hypertarget{RNA2}{RNA2 - Login}}
 
 L'utente non autenticato può effettuare il login al sistema, inserendo le stesse credenziali utilizzate in fase di registrazione, oppure accedenso tramite account di terze parti (Google, Facebook, Twitter, Instagram, etc.).
 
-\subsubsection*{\hypertarget{RF3}{RF3 - Recupero password}}
+\subsubsection*{\hypertarget{RNA3}{RNA3 - Recupero password}}
 
 L'utente non autenticato può richiedere il recupero della password, inserendo l'email utilizzata in fase di registrazione. L'utente riceverà una mail contenente un link per la reimpostazione della password, seguendo le medesime regole di validazione della password in fase di registrazione.
 
-\subsubsection*{\hypertarget{RF4}{RF4 - Cercare un posto dove suonare}}
+\subsubsection*{\hypertarget{RNA4}{RNA4 - Cercare un posto dove suonare}}
 
 L'utente non autenticato, dovrà essere in grado di vedere i luoghi dove poter suonare, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi. Per ogni luogo, l'utente potrà vedere la descrizione, la posizione e i contatti.
 
 L'utente non autenticato potrà contattare i luoghi suggeriti, tramite i contatti forniti, via chat o tramite chiamata.
 
-\subsubsection*{\hypertarget{RF5}{RF5 - Contattare il supporto}}
+\subsubsection*{\hypertarget{RNA5}{RNA5 - Contattare il supporto}}
 
 L'utente non autenticato potrà contacttare il supporto tecnico, inviando una mail all'indirizzo fornito, indicando il tipo di problema riscontrato.
 
@@ -148,31 +121,31 @@ L'utente autenticato è colui che ha effettuato il login al sistema. Questo tipo
 
 \begin{longtable}{|c|p{5cm}|p{7cm}|}
     \hline \textbf{ID}            & \textbf{Nome}                               & \textbf{Descrizione}                                                                                                \\  \hline
-    \hline \hyperlink{RF5}{RF5}   & Disconnessione                              & L'utente autenticato può effettuare la disconnessione dal sistema.                                                  \\ \hline
-    \hline\hyperlink{RF6}{RF6}    & Modifica profilo                            & L'utente autenticato può modificare il proprio profilo.                                                             \\ \hline
-    \hline \hyperlink{RF7}{RF7}   & Cercare un compagno                         & L'utente autenticato può cercare un compagno per suonare tra quelli suggeriti dal sistema.                          \\ \hline
-    \hline \hyperlink{RF8}{RF8}   & Aggiungere un amico                         & L'utente autenticato può aggiungere un altro utente alla propria lista amici.                                       \\ \hline
-    \hline \hyperlink{RF9}{RF9}   & Cercare un luogo                            & L'utente autenticato può cercare un luogo dove suonare tra quelli suggeriti dal sistema.                            \\ \hline
-    \hline \hyperlink{RF10}{RF10} & Visualizzare la lista degli amici           & L'utente autenticato può visualizzare la lista degli amici, che siano online o meno.                                \\ \hline
-    \hline \hyperlink{RF11}{RF11} & Visualizzare lo storico degli allenamenti   & L'utente autenticato può visualizzare lo storico degli allenamenti, con i relativi dettagli.                        \\ \hline
-    \hline \hyperlink{RF12}{RF12} & Contattare un utente                        & L'utente autenticato può contattare un altro utente, amico o meno, tramite chat.                                    \\ \hline
-    \hline \hyperlink{RF13}{RF13} & Contattare i luoghi suggeriti               & L'utente autenticato può contattare i luoghi suggeriti, tramite i contatti forniti, via chat o tramite chiamata.    \\ \hline
-    \hline \hyperlink{RF14}{RF14} & Iniziare una sessione di allenamento        & L'utente autenticato può iniziare una sessione di allenamento suonando con delle backing track fornite dal sistema. \\ \hline
-    \hline \hyperlink{RF15}{RF15} & Visualizzare cosa stanno suonando gli amici & L'utente autenticato può visualizzare che genere musicale stanno suonando i suoi amici.                             \\ \hline
-    \hline \hyperlink{RF16}{RF16} & Impostare un promemoria                     & L'utente autenticato può impostare un promemoria per un allenamento futuro.                                         \\ \hline
-    \hline \hyperlink{RF17}{RF17} & Modificare i promemoria degli allenamenti   & L'utente autenticato può modificare i promemoria per le sessioni di allenamento che ha impostato in precedenza.     \\ \hline
-    \hline \hyperlink{RF18}{RF18} & Contattare il supporto                      & L'utente autenticato potrà inviare una mail per ricevere supporto tecnico                                           \\ \hline
-    \hline \hyperlink{RF19}{RF19} & Gestire le richieste di amicizia            & L'utente autenticato può gestire le richieste d'amicizia ricevute, accettandole o rifiutandole
+    \hline \hyperlink{RA5}{RA5}   & Disconnessione                              & L'utente autenticato può effettuare la disconnessione dal sistema.                                                  \\ \hline
+    \hline \hyperlink{RA6}{RA6}   & Modifica profilo                            & L'utente autenticato può modificare il proprio profilo.                                                             \\ \hline
+    \hline \hyperlink{RA7}{RA7}   & Cercare un compagno                         & L'utente autenticato può cercare un compagno per suonare tra quelli suggeriti dal sistema.                          \\ \hline
+    \hline \hyperlink{RA8}{RA8}   & Aggiungere un amico                         & L'utente autenticato può aggiungere un altro utente alla propria lista amici.                                       \\ \hline
+    \hline \hyperlink{RA9}{RA9}   & Cercare un luogo                            & L'utente autenticato può cercare un luogo dove suonare tra quelli suggeriti dal sistema.                            \\ \hline
+    \hline \hyperlink{RA10}{RA10} & Visualizzare la lista degli amici           & L'utente autenticato può visualizzare la lista degli amici, che siano online o meno.                                \\ \hline
+    \hline \hyperlink{RA11}{RA11} & Visualizzare lo storico degli allenamenti   & L'utente autenticato può visualizzare lo storico degli allenamenti, con i relativi dettagli.                        \\ \hline
+    \hline \hyperlink{RA12}{RA12} & Contattare un utente                        & L'utente autenticato può contattare un altro utente, amico o meno, tramite chat.                                    \\ \hline
+    \hline \hyperlink{RA13}{RA13} & Contattare i luoghi suggeriti               & L'utente autenticato può contattare i luoghi suggeriti, tramite i contatti forniti, via chat o tramite chiamata.    \\ \hline
+    \hline \hyperlink{RA14}{RA14} & Iniziare una sessione di allenamento        & L'utente autenticato può iniziare una sessione di allenamento suonando con delle backing track fornite dal sistema. \\ \hline
+    \hline \hyperlink{RA15}{RA15} & Visualizzare cosa stanno suonando gli amici & L'utente autenticato può visualizzare che genere musicale stanno suonando i suoi amici.                             \\ \hline
+    \hline \hyperlink{RA16}{RA16} & Impostare un promemoria                     & L'utente autenticato può impostare un promemoria per un allenamento futuro.                                         \\ \hline
+    \hline \hyperlink{RA17}{RA17} & Modificare i promemoria degli allenamenti   & L'utente autenticato può modificare i promemoria per le sessioni di allenamento che ha impostato in precedenza.     \\ \hline
+    \hline \hyperlink{RA18}{RA18} & Contattare il supporto                      & L'utente autenticato potrà inviare una mail per ricevere supporto tecnico                                           \\ \hline
+    \hline \hyperlink{RA19}{RA19} & Gestire le richieste di amicizia            & L'utente autenticato può gestire le richieste d'amicizia ricevute, accettandole o rifiutandole
     \\ \hline
     \caption{Requisiti funzionali per l'utente autenticato.}
 \end{longtable}
 
-\subsubsection*{\hypertarget{RF5}{RF5 - Disconnesione}}
+\subsubsection*{\hypertarget{RA5}{RA5 - Disconnesione}}
 
 L'utente autenticato può effettuare la disconnessione dal sistema.
 
-\subsubsection*{\hypertarget{RF6}{RF6 - Modifica profilo}}
-L'utente autenticato può modificare il proprio profilo, inserendo o modificando le proprie preferenze musicali e abilità, oltre ai propri dati anagrafici ed eventuali contatti.
+\subsubsection*{\hypertarget{RA6}{RA6 - Modifica profilo}}
+L'utente autenticato può modificare il proprio profilo, inserendo o modificando le proprie preferenze musicali e abilità, oltre ai propri dati anagrafici, contatti e foto profilo.
 
 
 Se ne è in possesso, l'utente potrà collegare uno strumento smart capace di riconoscere l'attuale contesto musicale in cui si trova l'utente, in modo da poter aggiornare automaticamente i dati.
@@ -181,21 +154,21 @@ Se ne è in possesso, l'utente potrà collegare uno strumento smart capace di ri
 L'utente autenticato può modificare le proprie credenziali di accesso dell' account, inserendo una nuova email e/o una nuova password. La password dovrà essere confermata tramite un secondo inserimento e dovrà essere composta da almeno 8 caratteri, di cui almeno una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale.
 
 
-\subsubsection*{\hypertarget{RF7}{RF7 - Cercare un compagno}}
+\subsubsection*{\hypertarget{RA7}{RA7 - Cercare un compagno}}
 
 L'utente autenticato può cercare un compagno con il quale suonare insieme, il quale verrà suggerito dal sistema in base alle proprie preferenze musicali e abilità, oltre che in base alla posizione geografica. L'utente potrà vedere i profili degli altri utenti, con i quali potrà chattare ed organizzarsi per suonare insieme.
 
-\subsubsection*{\hypertarget{RF8}{RF8 - Aggiungere un amico}}
+\subsubsection*{\hypertarget{RA8}{RA8 - Aggiungere un amico}}
 
 L'utente autenticato può mandare una richiesta d'amicizia ad un altro utente, il quale potrà accettare o rifiutare la richiesta. In caso la richiesta venga accettata, l'utente sarà poi in grado di vedere la disponibilità dell'amico (online/assente/offline).
 
 
-\subsubsection*{\hypertarget{RF9}{RF9 - Cercare un luogo}}
+\subsubsection*{\hypertarget{RA9}{RA9 - Cercare un luogo}}
 
 
 L'utente autenticato può cercare un posto dove poter suonare tra quelli suggeriti dal sistema, sia in solitaria che in compagnia di altri utenti, sia per allenarsi che per esibirsi. I luoghi verranno suggeriti in base alla posizione geografica, oltre che alle preferenze musicali dell'utente. Per ogni luogo, l'utente potrà vedere la descrizione, la posizione e i contatti.
 
-\subsubsection*{\hypertarget{RF10}{RF10 - Visualizzare la lista degli amici}}
+\subsubsection*{\hypertarget{RA10}{RA10 - Visualizzare la lista degli amici}}
 
 L'utente autenticato può visualizzare la lista degli amici, con i quali potrà chattare ed organizzarsi per suonare insieme.
 
@@ -203,82 +176,296 @@ L'utente autenticato può visualizzare la lista degli amici, con i quali potrà 
 L'utente autenticato potrà riorganizzare la lista degli amici, in base alla disponibilità degli stessi (online/assente/offline), oppure creare delle liste personalizzate.
 
 
-\subsubsection*{\hypertarget{RF11}{RF11 - Visualizzare lo storico degli allenamenti}}
+\subsubsection*{\hypertarget{RA11}{RA11 - Visualizzare lo storico degli allenamenti}}
 
 L'utente autenticato può visualizzare lo storico delle sessioni di allenamento e vedere i progressi fatti. Inoltre potrà vedere per ogni sessione di allenamento, la data, la durata e il luogo.
 
-\subsubsection*{\hypertarget{RF12}{RF12 - Contattare un utente}}
+\subsubsection*{\hypertarget{RA12}{RA12 - Contattare un utente}}
 
 L'utente autenticato può contattare i profili degli utenti suggeriti dal sistema, iniziando una chat con loro, con la possibilità di mandare foto, video, audio e la propria posizione.
 
 L'utente sarà in grado di vedere la disponibilità dell'utente (online/assente/offline).
 
 
-\subsubsection*{\hypertarget{RF13}{RF13 - Contattare i luoghi suggeriti}}
+\subsubsection*{\hypertarget{RA13}{RA13 - Contattare i luoghi suggeriti}}
 
 L'utente autenticato può contattare i proprietari dei luoghi suggeriti dal sistema, iniziando una chat con loro.
 
-\subsubsection*{\hypertarget{RF14}{RF14 - Iniziare una sessione di allenamento}}
+\subsubsection*{\hypertarget{RA14}{RA14 - Iniziare una sessione di allenamento}}
 
 L'utente autenticato può, dalla sezione dell'applicazione dedicata, iniziare una jam session per esercitarsi, utilizzando le backing track fornite dal sistema.
 
 L'utente potrà scegliere se impostare il genere musicale, il tempo e la tonalità della backing track, oppure utilizzare quelle che il sistema suggerisce in base al contesto musicale attuale.
 
 
-\subsubsection*{\hypertarget{RF15}{RF15 - Visualizzare cosa stanno suonando gli amici}}
+\subsubsection*{\hypertarget{RA15}{RA15 - Visualizzare cosa stanno suonando gli amici}}
 
 In una sezione dedicata, l'utente autenticato può vedere cosa stanno suonando gli amici. Cliccando sul profilo dell'amico può scegliere se chattare con lui o iniziare a suonare con il sistema in base al genere suonato dall'amico.
 
-\subsubsection*{\hypertarget{RF16}{RF16 - Impostare promemoria per gli allenamenti}} L'utente autenticato può impostare dei promemoria per le sessioni di allenamento. Il sistema notificherà l'utente prima dell'inizio della sessione di allenamento, all'orario impostato dall'utente.
+\subsubsection*{\hypertarget{RA16}{RA16 - Impostare promemoria per gli allenamenti}} L'utente autenticato può impostare dei promemoria per le sessioni di allenamento. Il sistema notificherà l'utente prima dell'inizio della sessione di allenamento, all'orario impostato dall'utente.
 
-\subsubsection*{\hypertarget{RF17}{RF17 - Modificare i promemoria per gli allenamenti}}
+\subsubsection*{\hypertarget{RA17}{RA17 - Modificare i promemoria per gli allenamenti}}
 
 L'utente autenticato può modificare i promemoria per le sessioni di allenamento che ha impostato in precedenza, decidendo se modificare l'orario o disabilitare il promemoria.
 
-\subsubsection*{\hypertarget{RF18}{RF18 - Contattare il supporto}}
+\subsubsection*{\hypertarget{RA18}{RA18 - Contattare il supporto}}
 
 L'utente autenticato può contattare il supporto per segnalare un problema o per richiedere informazioni.
 
-\subsubsection*{\hypertarget{RF19}{RF19 - Gestire le richieste d'amicizia}}
+\subsubsection*{\hypertarget{RA19}{RA19 - Gestire le richieste d'amicizia}}
 
 L'utente autenticato può gestire le richieste d'amicizia ricevute, accettandole o rifiutandole. In caso la richiesta venga accettata, l'utente sarà poi in grado di vedere la disponibilità dell'amico (online/assente/offline). In caso la richiesta venga rifiutata, sarà chiesto all'utente se intende bloccare l'utente che ha inviato la richiesta.
 
 \newpage
+
+\subsection{Sistema}
+
+Requisiti che descrivono il comportamento del sistema, indipendentemente dall'utente che lo utilizza.
+
+\begin{table}
+    \centering
+    \begin{tabular}{|p{0.1\textwidth}|p{0.8\textwidth}|}
+        \hline
+        \textbf{ID}          & \textbf{Nome}                                     \\
+        \hline
+        \hyperlink{RS1}{RS1} & Gestione utenti                                   \\
+        \hline
+        \hyperlink{RS2}{RS2} & Suggerimento profili utente                       \\
+        \hline
+        \hyperlink{RS3}{RS3} & Suggerimento luoghi                               \\
+        \hline
+        \hyperlink{RS4}{RS4} & Gestione luoghi                                   \\
+        \hline
+        \hyperlink{RS5}{RS5} & Suggerimento backing track                        \\
+        \hline
+        \hyperlink{RS6}{RS6} & Riconoscimento contesto musicale                  \\
+        \hline
+        \hyperlink{RS7}{RS7} & Gestione sessioni di allenamento                  \\
+        \hline
+        \hyperlink{RS8}{RS8} & Fornire statistiche sulle sessioni di allenamento \\
+        \hline
+    \end{tabular}
+    \caption{Requisiti di sistema}
+\end{table}
+
+\subsubsection*{\hypertarget{RS1}{RS1 - Gestione utenti}}
+
+Il sistema associerà ad ogni utente registrato un identificatore univoco, che verrà utilizzato per identificare l'utente all'interno del sistema.
+
+\textbf{Commento: }Non so come gestire account e credenziali, credo che l'idea migliore sia gestire le credenziali dell'utente con un database relazionale, mentre il profilo dell'utente con sul triple-store.
+
+\subsubsection*{\hypertarget{RS2}{RS2 - Suggerimento profili utente}}
+
+Il sistema suggerirà all'utente altri profili di account registrati al sistema, deducendoli dal RDF database secondo i seguenti criteri:
+\begin{itemize}
+    \item Posizione geografica;
+    \item Preferenze musicali;
+    \item Ultimi generi musicali suonati;
+    \item Strumenti musicali suonati;
+\end{itemize}
+
+\subsubsection*{\hypertarget{RS3}{RS3 - Suggerimento luoghi}}
+
+Il sistema suggerirà all'utente dei luoghi dove poter suonare, deducendoli dal RDF database secondo i seguenti criteri:
+\begin{itemize}
+    \item Posizione geografica;
+    \item Generi musicali suonati;
+    \item Disponibilità del luogo;
+    \item Disponibilità degli strumenti;
+\end{itemize}
+
+\subsubsection*{\hypertarget{RS4}{RS4 - Gestione luoghi}}
+
+Il sistema gestirà i luoghi dove poter suonare, salvando le informazioni relative ad essi nel triple-store.
+
+\textbf{Commento: }Al momento l'ontologia non fornisce relazioni per rappresentare, ad esempio, se il luogo ha la possibilità di offrire strumenti, oppure semplicemente se il locale è aperto o chiuso. Si può decidere se tenerlo così oppure aggiungere delle relazioni per rappresentare queste informazioni.
+
+
+\subsubsection*{\hypertarget{RS5}{RS5 - Suggerimento backing track}}
+
+Il sistema suggerirà all'utente delle backing track per i suoi allenamenti. Le backing track verranno suggerite in base all'attuale contesto musicale dell'utente e verranno scelte tra quelle presenti nel sistema.
+
+\textbf{Commento: }L'idea è che su un database siano salvate delle backing track con le relative informazioni (genere, tempo, tonalità, ecc...) e che il sistema le riproduca via streaming per suonare con l'utente. Sarebbe da discutere se sia fattibile implementare questa funzionalità.
+
+\subsubsection*{\hypertarget{RS6}{RS6? - Riconoscimento contesto musicale}}
+
+Il sistema riconoscerà il contesto musicale dell'utente, utilizzando il microfono del dispositivo, oppure lo smart instrument che l'utente sta utilizzando.
+
+\textbf{Commento: }Non ho mai utilizzato questo genere di dispositivi, non so quanto sia fattbile implementare questa funzionalità.
+
+\subsubsection*{\hypertarget{RS7}{RS7 - Gestione sessioni di allenamento}}
+
+Il sistema gestirà le sessioni di allenamento dell'utente, salvando le informazioni relative ad esse nel triple-store.
+
+\subsubsection*{\hypertarget{RS8}{RS8 - Fornire statistiche sulle sessioni di allenamento}}
+
+Il sistema fornirà all'utente delle statistiche sulle sessioni di allenamento e i progressi fatti da quest'ultimo. I dati saranno accessibili dall'apposita sezione nell'applicazione.
+
+\subsubsection*{\hypertarget{RS9}{RS9 - Richiesta di supporto}}
+
+Il sistema fornirà all'utente la possibilità di richiedere supporto, in caso di problemi o malfunzionamenti. La richiesta di supporto verrà inviata tramite mail al team di sviluppo, che provvederà a rispondere all'utente.
+
+
+\section{Requisiti non funzionali}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|p{0.1\textwidth}|p{0.8\textwidth}|}
+        \hline
+        \textbf{ID}            & \textbf{Nome} \\
+        \hline
+        \hyperlink{RNF1}{RNF1} & Usabilità     \\
+        \hline
+        \hyperlink{RNF2}{RNF2} & Portabilità   \\
+        \hline
+        \hyperlink{RNF3}{RNF3} & Performance   \\
+        \hline
+        \hyperlink{RNF4}{RNF4} & Sicurezza     \\
+        \hline
+        \hyperlink{RNF5}{RNF5} & Scalabilità   \\
+        \hline
+        \hyperlink{RNF6}{RNF6} & Disponibilità \\
+        \hline
+        \hyperlink{RNF7}{RNF7} & Accessibilità \\
+        \hline
+    \end{tabular}
+    \caption{Requisiti non funzionali}
+\end{table}
+
+\subsubsection*{\hypertarget{RNF1}{RNF1 - Usabilità}}
+
+L'applicazione dovrà essere semplice ed intuitiva, in modo da poter essere utilizzata anche da utenti non esperti. Per questo motivo l'utente dovrà poter accedere a tutte le funzionalità dell'applicazione in un numero limitato di azioni, utilizzando gesture comuni e facilmente ricordabili.
+
+\subsubsection*{\hypertarget{RNF2}{RNF2 - Portabilità}}
+
+L'applicazione dovrà essere usata da browser che supportano le progressive web app. L'interfaccia dovrà essere responsive, in modo da adattarsi a qualsiasi dimensione dello schermo.
+
+\subsubsection*{\hypertarget{RNF3}{RNF3 - Performance}}
+
+Le interazioni dell'utente con l'applicazione dovranno risultare fluide ed immediate e il sistema dovrà assicurare un tempo di risposta alle richieste, dove è prevista una raccolta dati, inferiore a 3 secondi.
+
+
+\subsubsection*{\hypertarget{RNF4}{RNF4 - Sicurezza}}
+
+Il sistema deve garantire la sicurezza dei dati sensibili degli utenti (es. password), ma anche delle chat tra utenti. Per questo motivo le password degli utenti dovranno essere salvate in forma criptata, mentre le chat dovranno essere cifrate in modo da non poter essere lette da terzi.
+
+
+\subsubsection*{\hypertarget{RNF5}{RNF5 - Scalabilità}}
+
+Il sistema deve essere in grado di gestire un numero sempre crescente di utenti e di dati che vengono caricati nei database.
+
+
+
+\subsubsection*{\hypertarget{RNF6}{RNF6 - Disponibilità}}
+
+Il sistema deve essere accessibile ed operativo 24 ore su 24, 7 giorni su 7, garantendo tutti i servizi offerti agli utenti.
+L'unico motivo per cui il sistema potrebbe non essere disponibile è la manutenzione, che verrà effettuata in orari notturni, in modo da non disturbare gli utenti.
+
+\subsubsection*{\hypertarget{RNF7}{RNF7 - Accessibilità}}
+
+L'applicazione deve essere utilizzabile da chiunque, permettendo:
+\begin{itemize}
+    \item di scegliere tra diverse lingue;
+    \item di cambiare lo schema colori per sceglierne uno adatto a persone con daltonismo;
+    \item di cambiare le dimensioni del testo per renderlo più leggibile;
+\end{itemize}
+
 \section{Utilizzo dell'ontologia}
 
 Le classi dell'ontologia interessate per la realizzazione del progetto sono le seguenti:
 \begin{itemize}
-    \item \href{https://schema.org/MusicVenue}{MusicVenue} e relative sottoclassi per rappresentare i luoghi dove poter suonare;
-    \item \href{http://purl.org/ontology/musico#HumanMusician}{HumanMusician} per rappresentare gli utenti con le seguenti proprietà:
+    \item \textbf{schema:MusicVenue} e relative sottoclassi per rappresentare i luoghi dove poter suonare e \textbf{schema:location} per le città;
+    \item \textbf{musico:HumanMusician} ed annesse relazioni, per rappresentare gli utenti. In particolare saranno da usare le seguenti relazioni:
           \begin{itemize}
-              \item  \href{http://purl.org/ontology/musico#professional_level}{professional\_level} Per rappresentare il livello di professionalità di un utente;
-              \item \href{http://purl.org/ontology/musico#plays_instrument}{plays\_instrument} Per rappresentare gli strumenti suonati da un utente;
+              \item \textbf{foaf:name} e \textbf{foaf:surname} per il nome e il cognome dell'utente;
+              \item \textbf{musico:professional\_level} Per rappresentare il livello di professionalità di un utente;
+              \item \textbf{musico:plays\_instrument} per collegare un utente allo strumento che suona;
+              \item \textbf{musico:plays\_genre} è la relazione che lega un utente al genere che suona;
           \end{itemize}
-    \item \href{http://purl.org/ontology/mo/Genre}{Genre} Per rappresentare i generi musicali, con le seguenti proprietà:
-          \begin{itemize}
-              \item \href{http://purl.org/ontology/musico\#plays\_genre}{plays\_genre} per rappresentare il genere musicale che sta suonando un utente;
-          \end{itemize}
-    \item \href{http://xmlns.com/foaf/0.1/based_near}{based\_near} per rappresentare la vicinanza geografica tra due entità;
-    \item \href{http://purl.org/ontology/musico/SelfLearning}{SelfLearning} per rappresentare le sessioni di allenamento del musicista
+    \item \textbf{mo:Instrument} e \textbf{iomust:SmartInstrument} e relative sottoclassi per rappresentare gli strumenti musicali;
+    \item \textbf{mo:Genre} e \textbf{mo:similar\_to} per rappresentare i generi musicali e le loro somiglianze;
+    \item \textbf{foaf:based\_near} per rappresentare la vicinanza geografica tra due entità;
+    \item \textbf{musico:SelfLearning} per rappresentare le sessioni di allenamento del musicista
 \end{itemize}
 
 \subsection{Esempi di utilizzo}
+\begin{table}[h]
+    \begin{tabular}{|c|p{12cm}|}
+        \hline \textbf{Prefisso} & \textbf{URI}                                             \\ \hline
+        \textbf{foaf}            & http://xmlns.com/foaf/0.1/                               \\ \hline
+        \textbf{schema}          & https://schema.org/docs/schemaorg.owl                    \\ \hline
+        \textbf{mo}              & http://purl.org/ontology/mo/                             \\ \hline
+        \textbf{musico}          & http://purl.org/ontology/musico\#                        \\ \hline
+        \textbf{iomust}          & http://www.purl.org/ontology/iomust/internet\_of\_things \\ \hline
+    \end{tabular}
+    \caption{Prefissi utilizzati nelle query SPARQL}
+\end{table}
 
 \subsubsection{Esempio 1 }
 
 \lstinputlisting[language=SPARQL]{../backend/queries/query2.sparql}
 
-
 \subsubsection{Esempio 2 }
 
-\begin{table}[h]
-
-    \lstinputlisting[language=SPARQL]{../backend/queries/query3.sparql}
-    In questo caso, i generi restituiti vengono trovati in base a ciò che gli utenti hanno suonato in precedenza, e non in base a ciò che hanno impostato nel profilo.
-\end{table}
+\lstinputlisting[language=SPARQL]{../backend/queries/query3.sparql}
+In questo caso, i generi restituiti vengono trovati in base a ciò che gli utenti hanno suonato in precedenza, e non in base a ciò che hanno impostato nel profilo.
 
 \subsubsection{Esempio 3 }
 
 \lstinputlisting[language=SPARQL]{../backend/queries/query4.sparql}
+
+
+\newpage
+\section{Interfaccia}
+
+Di seguito sono riportate alcune schermate di una possibile interfaccia per l'applicazione. Tali schermate sono state realizzate per Iphone 13 Pro Max. In ogni caso, l'applicazione, essendo web app, sarà utilizzabile da qualsiasi dispositivo.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\dimexpr\textwidth]{img/LandingPage.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\dimexpr\textwidth ]{img/someone.png}
+    \end{subfigure}
+    \caption{Home page e pagina dei suggerimenti}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\dimexpr\textwidth]{img/newUser.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\dimexpr\textwidth]{img/chat.png}
+    \end{subfigure}
+    \caption{Apertura profilo utente e chat}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\dimexpr\textwidth]{img/profilo.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\dimexpr\textwidth]{img/friendList.png}
+    \end{subfigure}
+    \caption{Profilo utente e lista amici}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\dimexpr\textwidth]{img/Trainer.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\dimexpr\textwidth]{img/Supporto.png}
+    \end{subfigure}
+    \caption{Pagine delle sessioni di allenamento e del supporto}
+\end{figure}
 
 \end{document}
