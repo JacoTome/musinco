@@ -1,14 +1,15 @@
-import './App.css';
-import Card from './components/Card';
+import "./App.css";
+import Genre from "./components/Genre";
+import Header from "./components/Header";
+import UserSuggestion from "./components/UserSuggestion";
 function App() {
-  return (
-    <div className="App">
-      <div>
-        <h1>My React App</h1>
-        <Card />
-      </div>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Header />
+			<UserSuggestion />
+			<Genre />
+		</div>
+	);
 }
 
 export default App;

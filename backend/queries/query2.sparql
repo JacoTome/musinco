@@ -1,0 +1,18 @@
+# Musicisti nelle vicinanze dell'utente
+# che suonano generi simili al suo
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX musico: <http://purl.org/ontology/musico#> 
+SELECT DISTINCT ?name ?surname ?instrument ?genre
+WHERE {
+  # ?user sostituibile con [mo:uuid 1234]
+  ?user foaf:based_near ?location ;
+        musico:plays_genre ?genre .
+  ?others foaf:based_near ?location ;
+          musico:plays_genre ?genre ;  
+  # musico:plays_genre [ mo:similar_to ?genre ] .
+          foaf:firstName ?name ;
+          foaf:lastName ?surname ;
+          musico:plays_instrument ?instrument ;
+          musico:plays_genre ?genre ;
+  FILTER (?user != ?others)
+}
