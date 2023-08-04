@@ -1,0 +1,94 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/
+mo:		http://purl.org/ontology/mo/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+smi:		http://purl.org/ontology/iomust/smi#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+foaf:		http://xmlns.com/foaf/0.1/
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+time:		http://www.w3.org/2006/time#
+musico:		http://purl.org/ontology/musico/
+schema:		https://schema.org/
+musicoo:		http://purl.org/ontology/musico#
+
+[MappingDeclaration] @collection [[
+mappingId	MAPID-Artist
+target		:/Artist/{artist_id} a :Artist ; schema:name {artist_name} . 
+source		select * from musinco.artist
+
+mappingId	MAPID-MusiciansGroup
+target		:/MusiciansGroup/{group_id} a musico:MusiciansGroup ; schema:name {group_name} ; :foundation_day {created_in}^^xsd:date . 
+source		select * from musinco.musician_group
+
+mappingId	MAPID-Users
+target		:/Users/{user_id} a musicoo:HumanMusician ; musicoo:expertise_level {expertise_level} ; musicoo:professional_level {professional_level} ; musicoo:multi-instrumentalism_level {multi-instrumentalism_level} ; foaf:based_near :/Position/{based_near} . 
+source		Select * from musinco.users
+
+mappingId	MAPID-MusicVenue
+target		:/MusicVenue/{music_venue_id} a schema:MusicVenue ; schema:address :/Position/{placed_in} ; schema:name {name} ; schema:telephone {phone_number} ; schema:email {email} . 
+source		Select * from musinco.music_venue
+
+mappingId	MAPID-Position
+target		:/Position/{position_id} a schema:GeoCoordinates ; schema:latitude {latitude} ; schema:longitude {longitude} ; schema:address {address} ; schema:addressCountry {country} ; schema:containedIn {city} . 
+source		Select * from musinco.position
+
+mappingId	MAPID-Genre
+target		:/Genre/{genre_id} a mo:Genre ; schema:name {genre_name} . 
+source		Select * from musinco.genre
+
+mappingId	MAPID-subgenre
+target		:/Genre/{subgenre_id} musicoo:sub_genre :/Genre{genre_id} . 
+source		Select * from musinco.subgenre_of
+
+mappingId	MAPID-plays_genre
+target		:/Users/{user_id} musicoo:plays_genre :/Genre/{genre_id} . 
+source		Select * from musinco.user_plays_genre
+
+mappingId	MAPID-Instrument
+target		:/Instrument/{instrument_id} a mo:Instrument ; schema:name {instrument_name} ; schema:manufacturer {manufacturer} ; schema:productionDate {year_of_manufacture} . 
+source		Select * from musinco.instruments
+
+mappingId	MAPID-User_group
+target		:/Users/{user_id} musico:has_group :/MusiciansGroup/{group_id} . 
+source		Select * from musinco.group_user
+
+mappingId	MAPID-SelfLearning
+target		:/SelfLearningSession/{session_id} a musico:SelfLearning ; time:day {date} ; schema:address :/MusicVenue/{music_venue_id} . 
+source		Select * from musinco.self_learning_session
+
+mappingId	MAPID-plays_instrument
+target		:/Users/{user_id} musicoo:plays_instrument :/Instrument{instrument_id} . 
+source		Select * from musinco.user_has_instrument
+
+mappingId	MAPID-genre_similar_to
+target		:/Genre/{genre1_id} mo:similar_to :/Genre/{genre2_id} . 
+source		select * from musinco.genre_similar_to
+
+mappingId	MAPID-MusicalWork
+target		:/MusicalWork/{musical_work_id} a mo:MusicalWork ; mo:genre :/Genre/{genre_id} ; mo:iswc {iswc} ; mo:key {key} ; mo:bpm {bpm} ; mo:tempo {tempo} ; mo:meter {meter} ; mo:release_type {release_type} . 
+source		Select * from musinco.musical_work
+
+mappingId	MAPID-MusicalEvent
+target		:/MusicalEvent/{event_id} a musico:MusicalEvent . 
+source		Select * from musinco.musical_event
+
+mappingId	MAPID-participation
+target		:/MusicianParticipation/{participation_key} a musico:MusicianParticipation ; musico:involved_event :/MusicalEvent/{event_id} . :/Artist/{artist_id} musico:in_participation :/MusicianParticipation/{participation_key} . 
+source		select * from musinco.participating_in
+
+mappingId	MAPID-used_instrument
+target		:/MusicianParticipation/{session_id} musico:played_instrument :/Instrument/{instrument_id} . 
+source		select * from musinco.used_instrument
+
+mappingId	MAPID-musical_work_played
+target		:/MusicianParticipation/{session_id} musico:played_musical_work :/MusicalWork/{musical_work_id} . 
+source		select * from musinco.musical_work_played
+
+mappingId	MAPID-TypeInstrument
+target		:/AcousticInstrument/{acoustic_instrument_id} a smi:AcousticInstrument . :/ElectricInstrument/{electric_instrument_id} a smi:ElectricInstrument . :/ElectroAcousticInstrument/{electroacoustic_instrument_id} a smi:ElectroacousticInstrument . 
+source		Select * from musinco.acoustic_instrument, musinco.electric_instrument, musinco.electroacoustic_instrument
+]]
+

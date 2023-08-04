@@ -1,0 +1,852 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco">
+    <Prefix name="" IRI="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/"/>
+    <Prefix name="mo" IRI="http://purl.org/ontology/mo/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="smi" IRI="http://purl.org/ontology/iomust/smi#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="obda" IRI="https://w3id.org/obda/vocabulary#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
+    <Prefix name="musico" IRI="http://purl.org/ontology/musico/"/>
+    <Prefix name="schema" IRI="https://schema.org/"/>
+    <Prefix name="musicoo" IRI="http://purl.org/ontology/musico#"/>
+    <Import>http://purl.org/ontology/musico/0.1</Import>
+    <Declaration>
+        <Class IRI="/Artist"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="/foundation_day"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="schema:Person"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/UDC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#FSharpMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#CFlatMajor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/DDC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/accrualPeriodicity"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/spatial"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/tableOfContents"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://kurtisrandom.com/foaf.rdf#kurtjx"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#AMajor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/subject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/instructionalMethod"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitWeek"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/ontology/ao/core#mood"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/language"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/event.owl"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/hasPart"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:duration"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/references"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/timeline.owl"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/URI"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:ep"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#CMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Wednesday"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#changeNote"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#FSharpMajor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/Box"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/LCC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#G"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#F"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#E"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#D"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/accessRights"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#C"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#B"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#A"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/vocab/frbr/core#Work"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#AMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:audiobook"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:promotion"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/requires"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/temporal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:spokenword"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/MediaType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:remix"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="foaf:member"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/accrualMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/RFC4646"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/conformsTo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/issued"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#GSharpMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#BFlatMajor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#DSharp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/isReferencedBy"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/hasFormat"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/references"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/format"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/isReplacedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="foaf:depiction"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/ontology/ao/core#context"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:soundtrack"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Document"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#GSharp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Thursday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/ISO3166"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/hasPart"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/isRequiredBy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/abstract"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/rightsHolder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#EMajor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/timeline.owl#universaltimeline"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#GMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/IMT"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/isVersionOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#CSharpMajor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/relation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitMonth"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/ontology/ao/core#"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/MediaTypeOrExtent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/ISO639-2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/PhysicalMedium"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/ISO639-3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://raimond.me.uk/foaf.rdf#moustaki"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/publisher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/format"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="schema:Action"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/2006/time-entry#unitWeek"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/2006/time-entry#unitSecond"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#BFlatMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/BibliographicResource"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gMonth"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#DMajor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/license"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gYearMonth"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#FSharp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/accessRights"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="foaf:isPrimaryTopicOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/dcam/domainIncludes"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/accrualPeriodicity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#EFlatMinor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/rights"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/educationLevel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#ASharp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/creator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#EMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#GMajor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/vocab/frbr/core#Item"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#CSharpMinor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/stuff/rev#Review"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/replaces"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/dcam/rangeIncludes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#ASharpMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/rights"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/ontology/ao/core#occasion"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/temporal"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="xsd:pattern"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Organization"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#BFlat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#BMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Tuesday"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/publisher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/conformsTo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#DFlat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://foaf.me/zazi#me"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/relation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#CSharp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/medium"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#AFlatMinor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/mediator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitDay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/audience"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:bootleg"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/Agent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/MethodOfAccrual"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Monday"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/ontology/ao/core#time"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/AgentClass"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitSecond"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/replaces"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/isVersionOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitYear"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/extent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#BMajor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.talkdigger.com/foaf/fgiasson"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/vocab/frbr/core#Manifestation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/Point"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/2006/time-entry#unitMinute"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/Location"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/Standard"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="schema:participant"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gYear"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/source"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Saturday"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:official"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/accrualPolicy"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/isFormatOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/MESH"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/ontology/ao/core#genre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/contributor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/2006/time-entry#unitDay"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/created"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/Frequency"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gDay"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Image"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="schema:MusicVenue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/NLM"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:interview"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://moustaki.org/foaf.rdf#moustaki"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/Policy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitHour"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/educationLevel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#DMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/provenance"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/audience"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/hasVersion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Friday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#EFlatMajor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/vocab/frbr/core#Expression"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/vocab/frbr/core#embodiment"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:single"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/type"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/RFC1766"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/ontology/ao/core#activity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/vocab/frbr/core#exemplar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/Period"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/ProvenanceStatement"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/LocationPeriodOrJurisdiction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/language"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/MethodOfInstruction"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/ontology/ao/core#location"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/extent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/PeriodOfTime"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/requires"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/modified"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="_:genid2147484304"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/LicenseDocument"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/W3CDTF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/TGN"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#GFlatMajor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="_:genid2147484303"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/2006/time-entry#unitYear"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitMinute"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#FMinor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/accrualPolicy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/isFormatOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/subject"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/mediator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#DFlatMajor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontology/similarity/Association"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/medium"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/coverage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/spatial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://web.resource.org/cc/License"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#DSharpMinor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/SizeOrDuration"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#GFlat"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/hasVersion"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/isReplacedBy"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/coverage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/source"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/isRequiredBy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#AFlatMajor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/type"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:live"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Sunday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/RFC5646"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:album"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/2006/time-entry#unitMonth"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/isReferencedBy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/LCSH"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/dc/dcam/VocabularyEncodingScheme"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#scopeNote"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/tableOfContents"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/hasFormat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#AFlat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#FMajor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/FileFormat"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#historyNote"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/contributor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/DCMIType"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#EFlat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/RightsStatement"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.w3.org/2006/time-entry#unitHour"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/LinguisticSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdfs:Class"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/PhysicalResource"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="mo:compilation"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#editorialNote"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/RFC3066"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/accrualMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/dc/terms/Jurisdiction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#CFlat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://purl.org/NET/c4dm/keys.owl#CMajor"/>
+    </Declaration>
+    <SubClassOf>
+        <Class abbreviatedIRI="musicoo:HumanMusician"/>
+        <Class IRI="/Artist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="musico:MusiciansGroup"/>
+        <Class IRI="/Artist"/>
+    </SubClassOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="/foundation_day"/>
+        <Class abbreviatedIRI="musico:MusiciansGroup"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="/foundation_day"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
