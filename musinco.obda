@@ -24,7 +24,7 @@ target		:/MusiciansGroup/{group_id} a musico:MusiciansGroup ; schema:name {group
 source		select * from musinco.musician_group
 
 mappingId	MAPID-Users
-target		:/Users/{user_id} a musicoo:HumanMusician ; musicoo:expertise_level {expertise_level} ; musicoo:professional_level {professional_level} ; musicoo:multi-instrumentalism_level {multi-instrumentalism_level} ; foaf:based_near :/Position/{based_near} . 
+target		:/Users/{user_id} a musicoo:HumanMusician ; musicoo:expertise_level {expertise_level} ; musicoo:professional_level {professional_level} ; musicoo:multi-instrumentalism_level {multi-instrumentalism_level} ; foaf:based_near :/Position/{based_near} ; foaf:lastName {last_name} ; foaf:firstName {first_name} ; :email {email} ; :cod_fiscale {codice_fiscale} ; :username {username} . 
 source		Select * from musinco.users
 
 mappingId	MAPID-MusicVenue

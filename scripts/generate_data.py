@@ -261,6 +261,7 @@ def music_venue(cur):
 
 
 def self_learning_session(cur):
+    pprint("Adding self learning sessions")
     # query users
     cur.execute('SELECT user_id, based_near FROM musinco.users;')
     artists = cur.fetchall()
@@ -274,6 +275,7 @@ def self_learning_session(cur):
             f'SELECT music_venue_id FROM musinco.music_venue WHERE placed_in = "{artist[1]}";')
         venues = cur.fetchall()
         if len(venues) > 0:
+            # TODO: INSERT INTO MUSICAL_EVENT TABLE
             cur.execute(
                 f"INSERT INTO musinco.self_learning_session (artist_id, `date`, music_venue_id) VALUES('{artist[0]}', '{random_date()}', '{pick_one_randomly(venues)[0]}');")
 
@@ -421,7 +423,7 @@ with con.cursor() as cur:
     # subgenre_of(cur)
     # music_venue(cur)
     # musician_group(cur)
-    # self_learning_session(cur)
+    self_learning_session(cur)
     # used_instrument(cur)
     # musical_work('D:\work.tar\work\mbdump\work', cur)
     # musical_work_played(cur)

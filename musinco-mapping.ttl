@@ -16,8 +16,8 @@
     ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "artist_name";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Text/{artist_name}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:name
     ];
@@ -33,8 +33,8 @@
     ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "group_name";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Text/{group_name}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:name
     ], [ a rr:PredicateObjectMap;
@@ -79,6 +79,36 @@
           rr:termType rr:IRI
         ];
       rr:predicate foaf:based_near
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "last_name";
+          rr:termType rr:Literal
+        ];
+      rr:predicate foaf:lastName
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "first_name";
+          rr:termType rr:Literal
+        ];
+      rr:predicate foaf:firstName
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "email";
+          rr:termType rr:Literal
+        ];
+      rr:predicate :email
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "codice_fiscale";
+          rr:termType rr:Literal
+        ];
+      rr:predicate :cod_fiscale
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "username";
+          rr:termType rr:Literal
+        ];
+      rr:predicate :username
     ];
   rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
       rr:class musicoo:HumanMusician;
@@ -98,20 +128,20 @@
       rr:predicate schema:address
     ], [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "name";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Text/{name}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:name
     ], [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "phone_number";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Number/{phone_number}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:telephone
     ], [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "email";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Text/{email}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:email
     ];
@@ -127,32 +157,32 @@
     ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "latitude";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Number/{latitude}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:latitude
     ], [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "longitude";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Number/{longitude}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:longitude
     ], [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "address";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//PostalAddress/{address}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:address
     ], [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "country";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Country/{country}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:addressCountry
     ], [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "city";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//City/{city}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:containedIn
     ];
@@ -168,8 +198,8 @@
     ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "genre_name";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Text/{genre_name}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:name
     ];
@@ -217,20 +247,20 @@
     ];
   rr:predicateObjectMap [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "instrument_name";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Text/{instrument_name}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:name
     ], [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "manufacturer";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Organization/{manufacturer}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:manufacturer
     ], [ a rr:PredicateObjectMap;
       rr:objectMap [ a rr:ObjectMap, rr:TermMap;
-          rr:column "year_of_manufacture";
-          rr:termType rr:Literal
+          rr:template "https://schema.org//Date/{year_of_manufacture}";
+          rr:termType rr:IRI
         ];
       rr:predicate schema:productionDate
     ];
@@ -374,7 +404,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-participation-e4a0a0ab-e5be-4981-a774-0a4f5993746d> a rr:TriplesMap;
+<urn:MAPID-participation-9e074f1b-5f9c-4d95-9bd8-51cd8d28bdf6> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "select * from musinco.participating_in"
     ];
@@ -391,7 +421,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-participation-6a6f710d-5140-4230-b1f2-aa6c59226ec8> a rr:TriplesMap;
+<urn:MAPID-participation-e853c5ab-4e28-46a9-a2c8-c2f371315026> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "select * from musinco.participating_in"
     ];
@@ -439,7 +469,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-TypeInstrument-b0bfbad0-5c2e-4789-8f9b-ec492c5b1f44> a rr:TriplesMap;
+<urn:MAPID-TypeInstrument-0b2d5abf-9f18-49ee-8499-b90a9f152d6c> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.acoustic_instrument, musinco.electric_instrument, musinco.electroacoustic_instrument"
     ];
@@ -449,7 +479,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-TypeInstrument-16b218f7-bdd0-4144-857b-928d3def9cd7> a rr:TriplesMap;
+<urn:MAPID-TypeInstrument-12ae9d19-b5fb-445c-a6f2-77dc625beee9> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.acoustic_instrument, musinco.electric_instrument, musinco.electroacoustic_instrument"
     ];
@@ -459,7 +489,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-TypeInstrument-d184f20d-4ef6-4726-a118-b5d47542573d> a rr:TriplesMap;
+<urn:MAPID-TypeInstrument-5496a667-f0d2-4eaf-ad35-a9499b715a53> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.acoustic_instrument, musinco.electric_instrument, musinco.electroacoustic_instrument"
     ];
