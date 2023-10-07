@@ -1,0 +1,50 @@
+PREFIX sl: <http://www.semanlink.net/2001/00/semanlink-schema\#\>
+
+PREFIX gr: <http://purl.org/goodrelations/v1\#\>
+PREFIX music: <http://musicontology.com/\>
+PREFIX mus: <http://data.doremus.org/ontology\#\>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/\>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema\#\>
+PREFIX owl: <http://www.w3.org/2002/07/owl\#\>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns\#\>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema\#\>
+PREFIX : <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/\> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/\> 
+PREFIX mo: <http://purl.org/ontology/mo/\> 
+prefix musico: <http://purl.org/ontology/musico/\> 
+prefix musicoo: <http://purl.org/ontology/musico\#\> 
+prefix rr: <http://www.w3.org/ns/r2rml\#\> 
+prefix schema: <https://schema.org/\> 
+prefix smi: <http://purl.org/ontology/iomust/smi\#\> 
+prefix time: <http://www.w3.org/2006/time\#\> 
+prefix graph: <http://204.216.223.231:3030/\>
+prefix me: <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicalEvent/\>
+prefix sls: <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/SelfLearningSession\>
+
+SELECT 
+?event ?sl ?genre ?venue
+
+where {
+  [a musico:MusicianParticipation] musico:involved_event ?event;
+   musico:played_musical_work ?o.
+  ?o mo:genre ?genre.
+  ?sl a musico:SelfLearning .
+  bind (str(?event) as ?event_string).
+  
+  bind (str(?sl) as ?sl_string) .
+  bind (strafter(?event_string,http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicalEvent/) as ?ev_Res).	
+  bind (strafter(?sl_string,http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/SelfLearningSession/) as ?sl_res).
+  ?sl schema:address ?venue.
+    
+  filter (?ev_Res = ?sl_res) 
+  
+  
+                                   
+  
+  
+  	
+}
+
+LIMIT 100
+
+

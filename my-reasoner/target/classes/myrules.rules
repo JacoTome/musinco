@@ -1,0 +1,10 @@
+
+@prefix musico: <http://purl.org/ontology/musico/>
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix musicoo: <http://purl.org/ontology/musico#>
+@include <OWL>
+@include <RDFS>
+[rule:
+ (?A musicoo:plays_genre ?G), (?A musico:has_group ?M)
+->
+(?M musico:plays_genre ?G)]
