@@ -477,6 +477,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#played_genre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#played_genre">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/musico#plays_genre"/>
+        <rdfs:domain rdf:resource="https://schema.org/MusicVenue"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/mo/Genre"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://xmlns.com/foaf/0.1/depiction -->
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/depiction"/>
