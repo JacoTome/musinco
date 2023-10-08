@@ -1,3 +1,5 @@
 node_modules/
 *.png
 *.fls
+./RDB2OWL/**
+catalog-v011.xml

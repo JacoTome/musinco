@@ -3,6 +3,7 @@
 @prefix mo: <http://purl.org/ontology/mo/> .
 @prefix musico: <http://purl.org/ontology/musico/> .
 @prefix musicoo: <http://purl.org/ontology/musico#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix schema: <https://schema.org/> .
@@ -10,7 +11,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<urn:MAPID-Artist-f3fd32cb-e96b-4c0e-be3c-4c5b90d850be> a rr:TriplesMap;
+<urn:MAPID-Artist-ba7e800b-5371-471b-91aa-f3ac40f66013> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "select * from musinco.artist"
     ];
@@ -27,7 +28,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Artist-a8a20d0e-3041-4e33-8197-59472353e9ea> a rr:TriplesMap;
+<urn:MAPID-Artist-ccbc7d35-aef0-4189-a264-c9d9f96ddf7f> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "select * from musinco.artist"
     ];
@@ -37,7 +38,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-MusiciansGroup-c4c38239-ba0c-4127-a21d-708d52449f09> a rr:TriplesMap;
+<urn:MAPID-MusiciansGroup-cb7a919e-1322-4743-9e6e-0c1875ea82c2> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "select * from musinco.musician_group"
     ];
@@ -61,7 +62,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-MusiciansGroup-1acce3c6-1657-48d7-9d6f-41d424fb4270> a rr:TriplesMap;
+<urn:MAPID-MusiciansGroup-699693da-064a-493b-a6ef-f9f44763de43> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "select * from musinco.musician_group"
     ];
@@ -136,7 +137,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-MusicVenue-e59261b0-951d-44f3-8bf9-292065fe5b2c> a rr:TriplesMap;
+<urn:MAPID-MusicVenue-02380748-b920-40da-b1ab-b51724dc7cf5> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.music_venue"
     ];
@@ -171,7 +172,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-MusicVenue-39cecd60-b491-45be-90d6-0efca7fc522e> a rr:TriplesMap;
+<urn:MAPID-MusicVenue-08359b43-12c9-46d2-a430-abc758f791d3> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.music_venue"
     ];
@@ -181,7 +182,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-MusicVenue-c8b9ee47-d74d-4bb8-a062-94d7213591cf> a rr:TriplesMap;
+<urn:MAPID-MusicVenue-3037c37f-4952-46a5-ab96-16ab9f6aa255> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.music_venue"
     ];
@@ -191,7 +192,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-MusicVenue-97c397ac-80d3-4f3e-bc2e-1c8397e2c148> a rr:TriplesMap;
+<urn:MAPID-MusicVenue-65ec910f-58a1-4edc-a16a-155c3f0ddb8f> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.music_venue"
     ];
@@ -201,7 +202,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Position-3cdce577-a981-4743-a859-dca9f03a75c0> a rr:TriplesMap;
+<urn:MAPID-Position-6e522352-54ef-4f35-89a0-c512d3abf66e> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.position"
     ];
@@ -242,7 +243,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Position-6f7e3cfc-7210-441a-b677-f19c50566829> a rr:TriplesMap;
+<urn:MAPID-Position-b918a2ba-c8a9-4499-859b-4c78e9ac163c> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.position"
     ];
@@ -252,7 +253,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Position-b005bd87-da8e-4660-af33-051289ddcb26> a rr:TriplesMap;
+<urn:MAPID-Position-dd0a691d-d016-4b03-8355-a6fe66362e5d> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.position"
     ];
@@ -262,7 +263,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Position-bb5c9b5f-2e4a-4f1b-aeba-ef77b9392546> a rr:TriplesMap;
+<urn:MAPID-Position-9a0ecc9c-dbd9-4628-a5e1-ec1ecd32fbf0> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.position"
     ];
@@ -272,7 +273,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Position-37fb198e-27f3-4b6e-a7a5-1d05139d5b87> a rr:TriplesMap;
+<urn:MAPID-Position-6adfed71-1378-4bb9-8f34-c98fd937d057> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.position"
     ];
@@ -282,7 +283,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Position-6a989cb7-eb50-404f-85c5-2e638734e9a7> a rr:TriplesMap;
+<urn:MAPID-Position-5133b6f6-e51e-4048-abdf-5c81a3166863> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.position"
     ];
@@ -292,7 +293,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Genre-bc0d041f-5609-4b98-acf3-b3c72eb6fa05> a rr:TriplesMap;
+<urn:MAPID-Genre-b0c4fdc6-f376-4924-920a-161b809b12f6> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.genre"
     ];
@@ -309,7 +310,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Genre-89ddd3b3-69dc-46c4-810e-5ca9c9b36023> a rr:TriplesMap;
+<urn:MAPID-Genre-fe2cff47-adaf-46e3-94f3-7f89e450e240> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.genre"
     ];
@@ -351,7 +352,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Instrument-59c90f4b-6e53-4d2b-81a6-8ffd0f41e2bd> a rr:TriplesMap;
+<urn:MAPID-Instrument-51169c32-3d84-40c3-9ef7-a74b871510ad> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.instruments"
     ];
@@ -380,7 +381,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Instrument-e6997a2b-f618-4571-9357-77a35e648168> a rr:TriplesMap;
+<urn:MAPID-Instrument-882da917-4591-40ee-b0fc-08df38141bf6> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.instruments"
     ];
@@ -390,7 +391,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Instrument-2792ee4f-99a2-470b-a327-e9d02c114c0a> a rr:TriplesMap;
+<urn:MAPID-Instrument-47c75d5a-44a7-47de-a5bd-a09b4b2dd678> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.instruments"
     ];
@@ -400,7 +401,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-Instrument-908287a2-e2fb-4310-85cd-0abf89849bbe> a rr:TriplesMap;
+<urn:MAPID-Instrument-c83240dd-04f1-442a-a066-c58807a9ce70> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.instruments"
     ];
@@ -442,6 +443,12 @@
           rr:termType rr:IRI
         ];
       rr:predicate schema:address
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicalEvent/{session_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate owl:sameAs
     ];
   rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
       rr:class musico:SelfLearning;
@@ -481,7 +488,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-MusicalWork-3b4e46cb-564b-489c-97b7-7eac3996e786> a rr:TriplesMap;
+<urn:MAPID-MusicalWork-cc8a5e0f-47ed-4468-952b-9f5add3b757b> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.musical_work"
     ];
@@ -534,7 +541,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-MusicalWork-03f61994-e259-40ea-98bd-92ee26e55683> a rr:TriplesMap;
+<urn:MAPID-MusicalWork-48670a21-71db-4798-a848-7e0fd39b79d2> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.musical_work"
     ];
@@ -544,7 +551,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-MusicalWork-f3544f4d-516e-4a64-a407-bb3ddf5db56b> a rr:TriplesMap;
+<urn:MAPID-MusicalWork-10fc8064-d67c-4d1c-8f72-4278dde7331f> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.musical_work"
     ];
@@ -564,7 +571,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-participation-1fb08dfa-812c-4bb9-b415-1b07cff1765b> a rr:TriplesMap;
+<urn:MAPID-participation-223a5d7b-241f-4f0c-a8b8-a98db3e547e2> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "select * from musinco.participating_in"
     ];
@@ -581,7 +588,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-participation-83e63f55-0598-4e5f-afb3-643ba1bbbe0c> a rr:TriplesMap;
+<urn:MAPID-participation-1d07deb8-2999-40cf-b4aa-4cebafcc6234> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "select * from musinco.participating_in"
     ];
@@ -629,7 +636,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-TypeInstrument-8f47de15-df70-480b-9f13-25d68a2c0f56> a rr:TriplesMap;
+<urn:MAPID-TypeInstrument-a6db49f7-472c-4821-9ac5-8fa7bab8eb19> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.acoustic_instrument, musinco.electric_instrument, musinco.electroacoustic_instrument"
     ];
@@ -639,7 +646,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-TypeInstrument-0bf9933d-6542-4d68-9d38-4b059801d633> a rr:TriplesMap;
+<urn:MAPID-TypeInstrument-caed5b6d-cdd8-48f4-9a32-9ce3423f8dff> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.acoustic_instrument, musinco.electric_instrument, musinco.electroacoustic_instrument"
     ];
@@ -649,7 +656,7 @@
       rr:termType rr:IRI
     ] .
 
-<urn:MAPID-TypeInstrument-78decf32-1da6-4a6a-9bce-526bd256be96> a rr:TriplesMap;
+<urn:MAPID-TypeInstrument-4746d59f-9ef7-4287-86a1-655d50339c3c> a rr:TriplesMap;
   rr:logicalTable [ a rr:R2RMLView;
       rr:sqlQuery "Select * from musinco.acoustic_instrument, musinco.electric_instrument, musinco.electroacoustic_instrument"
     ];

@@ -430,7 +430,10 @@ def get_genre(row, cur):
         else:
             ret_genre = genre_id[0]
     else:
-        ret_genre = ""
+        # query genre
+        cur.execute("SELECT genre_id FROM musinco.genre;")
+        genres = cur.fetchall()
+        ret_genre = pick_one_randomly(genres)[0]
     return ret_genre
 
 
@@ -503,6 +506,19 @@ def group_user(cur):
         pprint(e)
 
 
+def update_musical_work(cur):
+    #query genre
+    cur.execute("SELECT genre_id FROM musinco.genre;")
+    genres = cur.fetchall()
+    # query musical_work
+    cur.execute("SELECT musical_work_id FROM musinco.musical_work;")
+   
+    works = cur.fetchall()
+    for work in works:
+        genre = pick_one_randomly(genres)[0]
+        pprint(genre)
+        cur.execute(f"UPDATE musinco.musical_work SET genre_id = '{genre}' where musical_work_id = '{work[0]}'; ")
+
 with con.cursor() as cur:
     pprint("Starting to generate data")
     # instrument(cur)
@@ -515,7 +531,7 @@ with con.cursor() as cur:
     # subgenre_of(cur)
     # music_venue(cur)
     # musician_group(cur)
-    self_learning_session(cur)
+    # self_learning_session(cur)
     # used_instrument(cur)
     # musical_work('D:\work.tar\work\mbdump\work', cur)
     # musical_work_played(cur)
@@ -523,6 +539,7 @@ with con.cursor() as cur:
     # participating_in(cur)
     # used_instrument(cur)
     # musical_work_played_event(cur)
+    update_musical_work(cur)
     pprint("Finished generating data")
 
 con.commit()
