@@ -55,11 +55,9 @@ PREFIX tdb2:    <http://jena.apache.org/2016/tdb#>
     ja:defaultGraph     :model_inf .
 
 :model_inf a ja:InfModel ;
-       ja:baseModel :baseModel ;
+    ja:content [ja:externalContent <file:musinco2-materialized-compl.xml>];
+    ja:content [ja:externalContent <file:musinco2.rdf>] ;
        ja:reasoner [
-                ja:reasonerURL <http://jena.hpl.hp.com/2003/GenericRuleReasoner> ;
-                ja:rules [ja:rulesFrom <file:src/main/resources/myrules.rules>]
+          ja:reasonerURL <http://jena.hpl.hp.com/2003/GenericRuleReasoner> ;
+          ja:rules [ja:rulesFrom <file:myrules.ttl>]
        ] .
-:baseModel a ja:MemoryModel;
-    ja:content [ja:externalContent <file:musinco2-materialized.xml>].
-

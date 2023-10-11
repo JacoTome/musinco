@@ -1,60 +1,91 @@
 package com.mycompany.app;
 
-import org.apache.jena.query.*;
+import org.apache.jena.fuseki.main.FusekiServer;
+import org.apache.jena.fuseki.system.FusekiLogging;
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.query.Dataset;
+import org.apache.jena.query.DatasetFactory;
+import org.apache.jena.rdf.model.InfModel;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.reasoner.Reasoner;
-import org.apache.jena.reasoner.rulesys.GenericRuleReasonerFactory;
+import org.apache.jena.reasoner.rulesys.GenericRuleReasoner;
 import org.apache.jena.reasoner.rulesys.Rule;
-import org.apache.jena.vocabulary.ReasonerVocabulary;
 
-import java.util.List;
+public class App {
 
-/**
-  * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        String musinco = "<http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/";
-        Model model = ModelFactory.createDefaultModel();
-        model.read("file:/home/jaco/Documents/Tirocinio/musinco/my-reasoner/src/main/java/com/mycompany/app/musinco2.rdf");
+    public static final String MUSINCO = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\java\\resources\\musinco2.rdf";
+    public static final String MUSICO = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\java\\resources\\MUSICO.rdf";
+    public static final String DATA = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\java\\resources\\musinco2-materialized-compl.xml";
+    public static final String RULES = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\resources\\myrules.rules";
+
+
+    public static FusekiServer startServer(Dataset ds) {
+        FusekiLogging.setLogging();
+        return FusekiServer.create()
+                .verbose(true)
+                .add("/ds", ds)
+                .port(3030)
+                .build();
+    }
+
+    public static void main(String[] args) {
+
+        OntModel ontModel = ModelFactory.createOntologyModel();
+        ontModel.read(MUSINCO, "RDF/XML");
+        ontModel.read(MUSICO, "RDF/XML");
+        ontModel.read(DATA, "RDF/XML");
+        OntModel ontModelInf = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM_RULE_INF, ontModel);
+        System.out.println("Ontology loaded");
+
+        Model baseInf = ontModelInf.getBaseModel();
+        System.out.println("Base model created");
+
         // Create a reasoner
-        String rules = "/home/jaco/Documents/Tirocinio/musinco/my-reasoner/src/main/resources/myrules.rules";
-        Resource configuration =  model.createResource();
-        configuration.addProperty(ReasonerVocabulary.PROPruleMode,"hybrid");
-        configuration.addProperty(ReasonerVocabulary.PROPruleSet,  rules);
-        List<Rule> imp_rules = Rule.rulesFromURL(rules);
+        Reasoner reasoner = new GenericRuleReasoner(Rule.rulesFromURL(RULES));
+        System.out.println("Reasoner created");
 
-// Create an instance of such a reasoner
-        Reasoner reasoner = GenericRuleReasonerFactory.theInstance().create(configuration);
-        // Infere triples
-        Model inferredModel = ModelFactory.createInfModel(reasoner, model);
+        // Create an inference model
+        InfModel inf = ModelFactory.createInfModel(reasoner, baseInf);
+        System.out.println("Inference model created");
+
+        // create Dataset from inf model
+        Dataset ds = DatasetFactory.create(inf);
+        System.out.println("Dataset created");
+        FusekiServer server = startServer(ds);
 
         // Example SPARQL query
-        String queryString =
-                "PREFIX musico: <http://purl.org/ontology/musico/> " +
-                "PREFIX musicoo: <http://purl.org/ontology/musico#> " +
-                "SELECT * WHERE { ?subject  a musico:MusiciansGroup; musicoo:plays_genre ?g }";
-        Query query = QueryFactory.create(queryString);
-        QueryExecution qe = QueryExecutionFactory.create(query, inferredModel);
+//        String queryString =
+//                "PREFIX musico: <http://purl.org/ontology/musico/> " +
+//                        "PREFIX musicoo: <http://purl.org/ontology/musico#> " +
+//                        "PREFIX mo: <http://purl.org/ontology/mo/>" +
+//                        "PREFIX schema: <https://schema.org/>" +
+//                        "PREFIX owl: <http://www.w3.org/2002/07/owl#>" +
+//                        "SELECT  * WHERE { " +
+//                         " ?s owl:sameAs ?o ." +
+//                        "?s a schema:MusicVenue ;" +
+//                        "  ?p [a mo:Genre]" +
+//                      "?s ?p [a mo:Genre] ." +
+//                        "?s a owl:Class ." +
+//                        "?class a owl:Class ." +
+//                        "[a musico:MusiciansGroup] musico:plays_genre ?genre ." +
+//                        "?part musico:involved_event/^owl:sameAs/schema:address ?venue ." +
+//                        "?part musico:played_musical_work/mo:genre ?genre ." +
+//
+//                        "?part musico:involved_event ?event." +
+//                        "?event owl:sameAs ?sl." +
+//                        "?sl a musico:SelfLearning ." +
+//                        "?sl schema:address ?venue ." +
+//                        "?part musico:played_musical_work ?work ." +
+//                        "?work mo:genre ?genre ." +
+//                        "?p ?o [a mo:Genre]." +
+//                        "}";
 
-        try {
-            ResultSet results = qe.execSelect();
-            if (!results.hasNext()) {
-                System.out.println("Nothing");
-            }
-            while (results.hasNext()) {
-                QuerySolution soln = results.nextSolution();
-                System.out.println(soln);
-                // Process query results
-                // ...
-            }
-        } finally {
-            qe.close();
-        }
+
+//        execQuery(queryString, baseInf);
+        server.start();
+//        ServerConn.tryConnection();
+        server.join();
     }
 }
