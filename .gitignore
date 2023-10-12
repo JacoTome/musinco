@@ -1,5 +1,6 @@
 node_modules/
 *.png
 *.fls
-./RDB2OWL/**
+RDB2OWL/
 catalog-v011.xml
+catalog-v001.xml

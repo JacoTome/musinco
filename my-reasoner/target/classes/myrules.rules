@@ -20,5 +20,6 @@
     (?p musico:played_musical_work ?w ),
     (?w mo:genre ?g),
     ->
-    (?v musinco:played_genre ?g)
-]
+    (?v musinco:played_genre ?g)]
+
+
