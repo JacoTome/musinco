@@ -15,9 +15,9 @@ import org.apache.jena.reasoner.rulesys.Rule;
 
 public class App {
 
-    public static final String MUSINCO = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\java\\resources\\musinco2.rdf";
-    public static final String MUSICO = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\java\\resources\\MUSICO.rdf";
-    public static final String DATA = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\java\\resources\\musinco2-materialized-compl.xml";
+    public static final String MUSINCO = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\resources\\musinco2.rdf";
+    public static final String MUSICO = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\resources\\MUSICO.rdf";
+    public static final String DATA = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\resources\\musinco2-materialized-compl.xml";
     public static final String RULES = "C:\\Users\\jacot\\Documents\\musinco\\my-reasoner\\src\\main\\resources\\myrules.rules";
 
 
@@ -85,7 +85,7 @@ public class App {
 
 //        execQuery(queryString, baseInf);
         server.start();
-//        ServerConn.tryConnection();
+        ServerConn.tryConnection();
         server.join();
     }
 }

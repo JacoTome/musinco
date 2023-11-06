@@ -17,9 +17,8 @@ prefix rr: <http://www.w3.org/ns/r2rml\#\>
 prefix schema: <https://schema.org/\> 
 prefix smi: <http://purl.org/ontology/iomust/smi\#\> 
 prefix time: <http://www.w3.org/2006/time\#\> 
-prefix graph: <http://204.216.223.231:3030/\>
-prefix me: <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicalEvent/\>
-prefix sls: <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/SelfLearningSession\>
+
+
 
 SELECT 
 ?event ?sl ?genre ?venue

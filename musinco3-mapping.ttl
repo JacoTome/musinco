@@ -1,0 +1,679 @@
+@prefix : <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix musico: <http://purl.org/ontology/musico/> .
+@prefix musicoo: <http://purl.org/ontology/musico#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix schema: <https://schema.org/> .
+@prefix smi: <http://purl.org/ontology/iomust/smi#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:MAPID-Artist-b9ba4a15-d5ee-40b0-ae59-0e01835d0cce> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select * from musinco.artist"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{artist_name}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:name
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class :Artist;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Artist/{artist_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Artist-9933d577-6233-40c6-8b1b-3363c67b0165> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select * from musinco.artist"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Text;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{artist_name}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-MusiciansGroup-3b6c31f5-7bb1-486e-ad7c-b1f7925a683b> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select * from musinco.musician_group"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{group_name}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:name
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "created_in";
+          rr:datatype xsd:date;
+          rr:termType rr:Literal
+        ];
+      rr:predicate :foundation_day
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Artist/{group_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate owl:sameAs
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class musico:MusiciansGroup;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusiciansGroup/{group_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-MusiciansGroup-e12d3d6c-3c3c-41c1-92e2-f63ea6e0ca0b> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select * from musinco.musician_group"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Text;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{group_name}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Users> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.users"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "expertise_level";
+          rr:termType rr:Literal
+        ];
+      rr:predicate musicoo:expertise_level
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "professional_level";
+          rr:termType rr:Literal
+        ];
+      rr:predicate musicoo:professional_level
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "multi-instrumentalism_level";
+          rr:termType rr:Literal
+        ];
+      rr:predicate musicoo:multi-instrumentalism_level
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Position/{based_near}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate foaf:based_near
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "last_name";
+          rr:termType rr:Literal
+        ];
+      rr:predicate foaf:lastName
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "first_name";
+          rr:termType rr:Literal
+        ];
+      rr:predicate foaf:firstName
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "email";
+          rr:termType rr:Literal
+        ];
+      rr:predicate :email
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "codice_fiscale";
+          rr:termType rr:Literal
+        ];
+      rr:predicate :cod_fiscale
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "username";
+          rr:termType rr:Literal
+        ];
+      rr:predicate :username
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Artist/{user_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate owl:sameAs
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class musicoo:HumanMusician;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Users/{user_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-MusicVenue-11d426ae-ff74-4733-8b14-904985c093e4> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.music_venue"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Position/{placed_in}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:address
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{name}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:name
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Number/{phone_number}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:telephone
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{email}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:email
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:MusicVenue;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicVenue/{music_venue_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-MusicVenue-b99c0942-e9f2-4513-9e1d-3393c38b60e9> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.music_venue"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Text;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{name}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-MusicVenue-7e85c7f0-f15c-4d2e-a14e-c659bfece380> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.music_venue"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Text;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{email}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-MusicVenue-8b393e42-8798-48a5-8d06-df4b53fd3a94> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.music_venue"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Number;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Number/{phone_number}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Position-a8f10f8c-68cc-4890-b296-e2387a4c7683> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.position"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Number/{latitude}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:latitude
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Number/{longitude}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:longitude
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/PostalAddress/{address}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:address
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Country/{country}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:addressCountry
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/City/{city}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:containedIn
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:GeoCoordinates;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Position/{position_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Position-dcd2c9ea-5373-4308-9dfb-732a9f7f2448> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.position"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Number;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Number/{latitude}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Position-8ad9a3ca-9f89-4fe5-bbb7-7c176929394d> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.position"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Number;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Number/{longitude}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Position-a423cd06-61a4-485f-be4c-819d97a013bc> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.position"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:PostalAddress;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/PostalAddress/{address}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Position-d3dc2dbb-edd5-41c3-bc56-bd70db7666ec> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.position"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Country;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Country/{country}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Position-3d9b52eb-d9ef-43e7-916d-3b922b37fddd> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.position"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:City;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/City/{city}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Genre-8ee39dee-6fe4-4742-b81e-4cfa24e668b1> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.genre"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{genre_name}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:name
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class mo:Genre;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Genre/{genre_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Genre-1b42a85d-b4f6-4f34-965a-cd5401e74bcc> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.genre"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Text;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{genre_name}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-subgenre> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.subgenre_of"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Genre{genre_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate musicoo:sub_genre
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Genre/{subgenre_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-plays_genre> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.user_plays_genre"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Genre/{genre_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate musicoo:plays_genre
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Users/{user_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Instrument-10a67170-a5c7-44c3-a038-3ce14ce80ac6> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.instruments"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{instrument_name}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:name
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Organization/{manufacturer}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:manufacturer
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Date/{year_of_manufacture}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:productionDate
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class mo:Instrument;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Instrument/{instrument_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Instrument-f53f72b1-069f-4efa-80f1-fa7f5050bd38> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.instruments"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Text;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{instrument_name}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Instrument-7bb054fa-8205-4de6-bfc2-b44366b56570> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.instruments"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Organization;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Organization/{manufacturer}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-Instrument-334ac267-389f-46b2-bc43-c09fe61f7e49> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.instruments"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Date;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Date/{year_of_manufacture}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-User_group> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.group_user"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusiciansGroup/{group_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate mo:member_of
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Users/{user_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-SelfLearning> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.self_learning_session"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "date";
+          rr:termType rr:Literal
+        ];
+      rr:predicate time:day
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicVenue/{music_venue_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate schema:address
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicalEvent/{session_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate owl:sameAs
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class musico:SelfLearning;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/SelfLearningSession/{session_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-plays_instrument> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.user_has_instrument"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Instrument{instrument_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate musicoo:plays_instrument
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Users/{user_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-genre_similar_to> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select * from musinco.genre_similar_to"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Genre/{genre2_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate mo:similar_to
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Genre/{genre1_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-MusicalWork-1e91eb00-ab83-465f-9d15-4336e82cdbf9> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.musical_work"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Genre/{genre_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate mo:genre
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "iswc";
+          rr:termType rr:Literal
+        ];
+      rr:predicate mo:iswc
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{key}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate mo:key
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "bpm";
+          rr:termType rr:Literal
+        ];
+      rr:predicate mo:bpm
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "tempo";
+          rr:termType rr:Literal
+        ];
+      rr:predicate mo:tempo
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:column "meter";
+          rr:termType rr:Literal
+        ];
+      rr:predicate mo:meter
+    ], [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/ReleaseType/{release_type}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate mo:release_type
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class mo:MusicalWork;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicalWork/{musical_work_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-MusicalWork-21ea930f-0102-4009-8dfa-95b1ae6f8a38> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.musical_work"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class mo:ReleaseType;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/ReleaseType/{release_type}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-MusicalWork-978bcc45-3041-4ddb-825e-fdf8f4eda3bb> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.musical_work"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class schema:Text;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Text/{key}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-MusicalEvent> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.musical_event"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class musico:MusicalEvent;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicalEvent/{event_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-participation-0e85b3d1-7eae-4756-a944-886b574f7915> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select * from musinco.participating_in"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicalEvent/{event_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate musico:involved_event
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class musico:MusicianParticipation;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicianParticipation/{participation_key}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-participation-be3fe5d0-7bf7-4e74-ba25-b307190d17fc> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select * from musinco.participating_in"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicianParticipation/{participation_key}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate musico:in_participation
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Artist/{artist_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-used_instrument> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select * from musinco.used_instrument"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Instrument/{instrument_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate musico:played_instrument
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicianParticipation/{session_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-musical_work_played> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "select * from musinco.musical_work_played"
+    ];
+  rr:predicateObjectMap [ a rr:PredicateObjectMap;
+      rr:objectMap [ a rr:ObjectMap, rr:TermMap;
+          rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicalWork/{musical_work_id}";
+          rr:termType rr:IRI
+        ];
+      rr:predicate musico:played_musical_work
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/MusicianParticipation/{session_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-TypeInstrument-712c1a59-7893-4cda-8d18-6a074b12034b> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.acoustic_instrument, musinco.electric_instrument, musinco.electroacoustic_instrument"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class smi:AcousticInstrument;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/AcousticInstrument/{acoustic_instrument_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-TypeInstrument-d4e6773d-bbfb-46c3-ac51-a475f00a0eb3> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.acoustic_instrument, musinco.electric_instrument, musinco.electroacoustic_instrument"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class smi:ElectricInstrument;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/ElectricInstrument/{electric_instrument_id}";
+      rr:termType rr:IRI
+    ] .
+
+<urn:MAPID-TypeInstrument-308bf7f4-8c82-42a3-ab45-13f44768fcff> a rr:TriplesMap;
+  rr:logicalTable [ a rr:R2RMLView;
+      rr:sqlQuery "Select * from musinco.acoustic_instrument, musinco.electric_instrument, musinco.electroacoustic_instrument"
+    ];
+  rr:subjectMap [ a rr:SubjectMap, rr:TermMap;
+      rr:class smi:ElectroacousticInstrument;
+      rr:template "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/ElectroAcousticInstrument/{electroacoustic_instrument_id}";
+      rr:termType rr:IRI
+    ] .

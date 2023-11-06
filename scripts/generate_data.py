@@ -519,6 +519,20 @@ def update_musical_work(cur):
         pprint(genre)
         cur.execute(f"UPDATE musinco.musical_work SET genre_id = '{genre}' where musical_work_id = '{work[0]}'; ")
 
+
+def musical_work_explore(file, cur):
+    # build json data
+    counter = 0
+    failed = 0
+    first_row = load_json(file)
+    # get first row
+   
+    while counter < 2000:
+        row = next(first_row)
+        if 'Kraftwerk' in row.items():
+            pprint(row)
+            
+
 with con.cursor() as cur:
     pprint("Starting to generate data")
     # instrument(cur)
@@ -539,7 +553,8 @@ with con.cursor() as cur:
     # participating_in(cur)
     # used_instrument(cur)
     # musical_work_played_event(cur)
-    update_musical_work(cur)
+    # update_musical_work(cur)
+    musical_work_explore('D:\work.tar\work\mbdump\work', cur)
     pprint("Finished generating data")
 
 con.commit()
