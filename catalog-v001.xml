@@ -3,8 +3,10 @@
     <uri id="Imports Wizard Entry" name="http://purl.org/ontology/musico/0.1" uri="file:/D:/ontologie/musico/MUSICO.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.org/ontology/musico/0.1" uri="file:/home/jaco/Documents/musico/MUSICO.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1697012354272" name="http://purl.org/ontology/musico" uri="MUSICO.rdf"/>
-        <uri id="Automatically generated entry, Timestamp=1697012354272" name="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco" uri="musinco.owx"/>
-        <uri id="Automatically generated entry, Timestamp=1697012354272" name="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/" uri="musinco2.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1699294474132" name="http://purl.org/ontology/musico" uri="MUSICO.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1699294474132" name="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco" uri="musinco.owx"/>
+        <uri id="Automatically generated entry, Timestamp=1699294474132" name="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/" uri="musinco2.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1699294474132" name="shadowed:http://purl.org/ontology/musico" uri="my-reasoner/src/main/resources/MUSICO.rdf"/>
+        <uri id="Automatically generated entry, Timestamp=1699294474132" name="shadowed:http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/" uri="my-reasoner/src/main/resources/musinco2.rdf"/>
     </group>
 </catalog>
