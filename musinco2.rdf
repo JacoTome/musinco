@@ -487,6 +487,24 @@
     
 
 
+    <!-- http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#popular_mood -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#popular_mood">
+        <rdfs:domain rdf:resource="https://schema.org/Time"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/MFOEM_000193"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#used_to_play -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#used_to_play">
+        <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Instrument"/>
+        <rdfs:range rdf:resource="http://purl.org/ontology/mo/Genre"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://xmlns.com/foaf/0.1/depiction -->
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/depiction"/>

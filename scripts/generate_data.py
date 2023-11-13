@@ -13,18 +13,21 @@ con = pymysql.connect(
     host="204.216.223.231",
     port=3306,
     user="squinkis",
+    password="jaco",
     db="musinco",
 )
 
 
 def random_date():
-    start_date = datetime.date(2011, 1, 1)
+    start_date = datetime.date(2021, 1, 1)
     end_date = datetime.date(2021, 12, 31)
     return start_date + datetime.timedelta(
         # Get a random amount of seconds between `start` and `end`
         seconds=random.randint(0, int((end_date - start_date).total_seconds())),
     )
 
+def random_hour():
+    return f"{random.randint(0, 23)}:{random.randint(0, 59)}:{random.randint(0, 59)}"
 
 def random_phonenumber():
     return f"{random.randint(3000000000, 3999999999)}"
@@ -46,7 +49,7 @@ def generate_random16string():
         random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789") for n in range(16)
     )
 
-
+MAX_QUANTITY = 10000
 name_api = {
     "url": "https://parseapi.back4app.com/classes/Complete_List_Names?limit=1000",
     "headers": {
@@ -79,6 +82,8 @@ group_name_api = {
     },
 }
 
+emotion = ['happy', 'sad', 'angry', 'fear', 'disgust', 'surprise']
+mood = ['calm', 'energetic', 'relaxed', 'upbeat', 'melancholic', 'dark', 'bright', 'dreamy', 'romantic']
 
 def instrument(cur):
     instr_res = requests.get(f"{instrument_api['url']}")
@@ -90,7 +95,7 @@ def instrument(cur):
         instrument.append(li.td.text.lower())
 
     for i, instr in enumerate(instrument):
-        if i < 5000:
+        if i < MAX_QUANTITY:
             cur.execute(
                 f'INSERT INTO musinco.instruments (instrument_id, instrument_name) VALUES("{i}","{instr}");'
             )
@@ -110,30 +115,31 @@ def cities(cur):
     random.shuffle(countries)
 
     cities = []
-    for country in countries[:50]:
-        nation = country[1]
-        payload = {"iso2": nation}
+    while len(cities) < MAX_QUANTITY:
+        for country in countries[:50]:
+            nation = country[1]
+            payload = {"iso2": nation}
 
-        req = requests.post(
-            city_api["url_city"], data=payload, headers=city_api["headers"]
-        )
-
-        data = {}
-        if req.status_code == 200:
-            pprint("Adding cities for country: " + country[0])
-            data = json.loads(req.content.decode("utf-8"))
-            city_in_countries = data["data"]
-            cities_in_country = [
-                (country[0], x, country[2], country[3]) for x in city_in_countries
-            ]
-            for city in cities_in_country:
-                cities.append(city)
-        random.shuffle(cities)
-        cities = list(set(cities[:5000]))
-        for city in cities[:5000]:
-            cur.execute(
-                f'INSERT INTO musinco.`position` (country, city, latitude, longitude) VALUES("{city[0]}", "{city[1]}", "{city[2]}", "{city[3]}");'
+            req = requests.post(
+                city_api["url_city"], data=payload, headers=city_api["headers"]
             )
+
+            data = {}
+            if req.status_code == 200:
+                pprint("Adding cities for country: " + country[0])
+                data = json.loads(req.content.decode("utf-8"))
+                city_in_countries = data["data"]
+                cities_in_country = [
+                    (country[0], x, country[2], country[3]) for x in city_in_countries
+                ]
+                for city in cities_in_country:
+                    cities.append(city)
+            random.shuffle(cities)
+            cities = list(set(cities[:MAX_QUANTITY]))
+            for city in cities[:MAX_QUANTITY]:
+                cur.execute(
+                    f'INSERT INTO musinco.`position` (country, city, latitude, longitude) VALUES("{city[0]}", "{city[1]}", "{city[2]}", "{city[3]}");'
+                )
 
 
 def genre(cur):
@@ -145,7 +151,7 @@ def genre(cur):
         tag1 = soup[i]
         tag2 = soup[i + 1]
         genres.append((tag1.text, tag2.text))
-    for genre in genres[:5000]:
+    for genre in genres[:MAX_QUANTITY]:
         cur.execute(
             f'INSERT INTO musinco.genre (genre_id,genre_name) VALUES("{genre[0]}", "{genre[1]}");'
         )
@@ -318,14 +324,14 @@ def self_learning_session(cur):
     # cur.execute('SELECT venue_id FROM musinco.music_venue;')
     # venues = cur.fetchall()
     pprint("Adding events")
-    for _i in range(0, 5000):
+    for _i in range(0, MAX_QUANTITY):
         cur.execute(f"INSERT INTO musinco.musical_event ()  VALUES ();")
     pprint("Querying events")
     cur.execute("SELECT event_id FROM musinco.musical_event;")
     events = cur.fetchall()
     pprint(events)
     pprint(len(events))
-    for artist in artists[:5000]:
+    for artist in artists[:MAX_QUANTITY]:
         pprint(artist[0])
 
         # query music_venue near user
@@ -351,7 +357,7 @@ def participating_in(cur):
     cur.execute("SELECT event_id FROM musinco.musical_event;")
     sessions = cur.fetchall()
 
-    for session in sessions[:5000]:
+    for session in sessions[:MAX_QUANTITY]:
         try:
             cur.execute(
                 f"INSERT INTO musinco.participating_in ( event_id, artist_id) VALUES('{session[0]}', '{pick_one_randomly(artists)[0]}');"
@@ -368,7 +374,7 @@ def used_instrument(cur):
     cur.execute("SELECT instrument_id FROM musinco.instruments;")
     instruments = cur.fetchall()
 
-    for session in sessions[:5000]:
+    for session in sessions[:MAX_QUANTITY]:
         pprint(session[0])
         try:
             cur.execute(
@@ -387,13 +393,15 @@ def musical_work_played_event(cur):
     cur.execute("SELECT musical_work_id FROM musinco.musical_work;")
     works = cur.fetchall()
 
-    for event in events[:5000]:
-        try:
-            cur.execute(
-                f"INSERT INTO musinco.musical_work_played (session_id, musical_work_id) VALUES('{event[0]}', '{pick_one_randomly(works)[0]}');"
-            )
-        except Exception as e:
-            pprint(e)
+    for event in events[:MAX_QUANTITY]:
+        random_qty = random.randint(1, 5)
+        for _i in range(0, random_qty):
+            try:
+                cur.execute(
+                    f"INSERT INTO musinco.musical_work_played (session_id, musical_work_id) VALUES('{event[0]}', '{pick_one_randomly(works)[0]}');"
+                )
+            except Exception as e:
+                pprint(e)
 
 
 def load_json(file):
@@ -532,6 +540,25 @@ def musical_work_explore(file, cur):
         if 'Kraftwerk' in row.items():
             pprint(row)
             
+def update_participating_in(cur):
+    # query participating_in
+    cur.execute("SELECT participation_key FROM musinco.participating_in;")
+    participating_in = cur.fetchall()
+    # Update participating_in adding displayed_emotion, displayed_mood, felt_emotion, felt_mood
+    for part in participating_in:
+        set_emotion = pick_one_randomly(emotion)
+        set_mood = pick_one_randomly(mood)
+        cur.execute(f"UPDATE musinco.participating_in SET displayed_emotion = '{set_emotion}', displayed_mood = '{set_mood}', felt_emotion = '{set_emotion}', felt_mood = '{set_mood}' where participation_key = '{part[0]}'; ")
+
+def update_sls_with_hour(cur):
+    # query self_learning_session
+    cur.execute("SELECT session_id FROM musinco.self_learning_session;")
+    sls = cur.fetchall()
+    # Update self_learning_session adding start_time, end_time
+    for sl in sls:
+        start_time = random_hour()
+        end_time = random_hour()
+        cur.execute(f"UPDATE musinco.self_learning_session SET date = '{random_date()} {random_hour()}' where session_id = '{sl[0]}'; ")
 
 with con.cursor() as cur:
     pprint("Starting to generate data")
@@ -548,13 +575,14 @@ with con.cursor() as cur:
     # self_learning_session(cur)
     # used_instrument(cur)
     # musical_work('D:\work.tar\work\mbdump\work', cur)
-    # musical_work_played(cur)
+    # musical_work_played_event(cur)
     # group_user(cur)
     # participating_in(cur)
     # used_instrument(cur)
-    # musical_work_played_event(cur)
     # update_musical_work(cur)
-    musical_work_explore('D:\work.tar\work\mbdump\work', cur)
+    # musical_work_explore('D:\work.tar\work\mbdump\work', cur)
+    # update_participating_in(cur)
+    # update_sls_with_hour(cur)
     pprint("Finished generating data")
 
 con.commit()

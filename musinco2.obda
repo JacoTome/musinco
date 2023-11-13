@@ -33,11 +33,11 @@ target		:Artist/{artist_id} a :Artist ; schema:name :Text/{artist_name} . :Text/
 source		select * from musinco.artist
 
 mappingId	MAPID-MusiciansGroup
-target		:MusiciansGroup/{group_id} a musico:MusiciansGroup ; schema:name :Text/{group_name} ; :foundation_day {created_in}^^xsd:date . :Text/{group_name} a schema:Text . 
+target		:MusiciansGroup/{group_id} a musico:MusiciansGroup ; schema:name :Text/{group_name} ; :foundation_day {created_in}^^xsd:date ; owl:sameAs :Artist/{group_id} . :Text/{group_name} a schema:Text . 
 source		select * from musinco.musician_group
 
 mappingId	MAPID-Users
-target		:Users/{user_id} a musicoo:HumanMusician ; musicoo:expertise_level {expertise_level} ; musicoo:professional_level {professional_level} ; musicoo:multi-instrumentalism_level {multi-instrumentalism_level} ; foaf:based_near :Position/{based_near} ; foaf:lastName {last_name} ; foaf:firstName {first_name} ; :email {email} ; :cod_fiscale {codice_fiscale} ; :username {username} . 
+target		:Users/{user_id} a musicoo:HumanMusician ; musicoo:expertise_level {expertise_level} ; musicoo:professional_level {professional_level} ; musicoo:multi-instrumentalism_level {multi-instrumentalism_level} ; foaf:based_near :Position/{based_near} ; foaf:lastName {last_name} ; foaf:firstName {first_name} ; :email {email} ; :cod_fiscale {codice_fiscale} ; :username {username} ; owl:sameAs :Artist/{user_id} . 
 source		Select * from musinco.users
 
 mappingId	MAPID-MusicVenue
@@ -69,8 +69,8 @@ target		:Users/{user_id} musico:has_group :MusiciansGroup/{group_id} .
 source		Select * from musinco.group_user
 
 mappingId	MAPID-SelfLearning
-target		:SelfLearningSession/{session_id} a musico:SelfLearning ; time:day {date} ; schema:address :MusicVenue/{music_venue_id} ; owl:sameAs :MusicalEvent/{session_id} . 
-source		Select * from musinco.self_learning_session
+target		:SelfLearningSession/{session_id} a musico:SelfLearning ; time:day {giorno} ; schema:address :MusicVenue/{music_venue_id} ; owl:sameAs :MusicalEvent/{session_id} ; time:hour {ora}^^xsd:nonNegativeInteger ; time:minute {minuti}^^xsd:nonNegativeInteger ; time:second {secondi}^^xsd:nonNegativeInteger . 
+source		Select session_id, DATE(date) as giorno, HOUR(date) as ora , MINUTE(date) as minuti , SECOND(date) as secondi ,music_venue_id from musinco.self_learning_session
 
 mappingId	MAPID-plays_instrument
 target		:Users/{user_id} musicoo:plays_instrument :Instrument{instrument_id} . 
@@ -89,7 +89,7 @@ target		:MusicalEvent/{event_id} a musico:MusicalEvent .
 source		Select * from musinco.musical_event
 
 mappingId	MAPID-participation
-target		:MusicianParticipation/{participation_key} a musico:MusicianParticipation ; musico:involved_event :MusicalEvent/{event_id} . :Artist/{artist_id} musico:in_participation :MusicianParticipation/{participation_key} . 
+target		:MusicianParticipation/{participation_key} a musico:MusicianParticipation ; musico:involved_event :MusicalEvent/{event_id} ; musico:displayed_emotion :Emotion/{displayed_emotion} ; musico:displayed_mood :Mood/{displayed_mood} ; musico:felt_emotion :Emotion/{felt_emotion} ; musico:felt_mood :Mood/{felt_mood} . :Artist/{artist_id} musico:in_participation :MusicianParticipation/{participation_key} . 
 source		select * from musinco.participating_in
 
 mappingId	MAPID-used_instrument
