@@ -4,3 +4,5 @@ node_modules/
 RDB2OWL/
 catalog-v011.xml
 catalog-v001.xml
+my-reasoner/target/classes/com/mycompany/app/App.class
+.gitignore
