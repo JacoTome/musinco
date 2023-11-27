@@ -1,6 +1,10 @@
-# Select instrument used to play some genres
+#Select instrument used to play some genres
+create view strumentiGenere as 
+SELECT ui.instrument_id, pg.genre_id 
+FROM (
+	SELECT pi3.participation_key , mw.genre_id  FROM participating_in pi3
+	join musical_work_played mwp on pi3.participation_key  = mwp.session_id 
+	join musical_work mw on mwp.musical_work_id = mw.musical_work_id 
+	) as pg
+         inner join used_instrument ui on ui.session_id = pg.participation_key
 
-SELECT pi2.instrument_id , pg.genre_name, COUNT(pi2.instrument_id) as conta
-FROM part_genre pg inner join part_instrument pi2  on pg.participation_key = pi2.participation_key 
-GROUP by pg.genre_name , pi2.instrument_id 
-ORDER by conta desc

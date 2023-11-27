@@ -1,0 +1,32 @@
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <https://schema.org/>
+PREFIX mo: <http://purl.org/ontology/mo/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX music: <http://musicontology.com/>
+PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
+PREFIX musico: <http://purl.org/ontology/musico/>
+PREFIX musicoo: <http://purl.org/ontology/musico#>
+PREFIX musinco: <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#>
+PREFIX musincoo: <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/>
+
+SELECT ?hour ?mood (MAX(?moodCount)as ?maxCount)  WHERE {
+	SELECT ?hour ?mood (COUNT(?mood) as ?moodCount) 
+	WHERE {
+      ?p a musico:SelfLearning;
+         time:hour ?hour;
+         time:day ?day ;
+         owl:sameAs ?event.
+      ?part musico:involved_event ?event;
+            musico:displayed_mood ?mood.
+      ?time a schema:Time;
+            time:day ?day;
+            time:hour ?hour.
+    }
+	GROUP BY ?hour ?mood  
+}
+GROUP by ?hour ?moodCount ?maxCount  ?mood 
+ORDER BY ASC(?hour) DESC(?maxCount)
+  
+  
+  

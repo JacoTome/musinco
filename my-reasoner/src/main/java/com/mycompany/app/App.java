@@ -9,7 +9,7 @@ import org.apache.jena.query.DatasetFactory;
 import org.apache.jena.rdf.model.InfModel;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.reasoner.Reasoner;
+import org.apache.jena.reasoner.rulesys.BuiltinRegistry;
 import org.apache.jena.reasoner.rulesys.GenericRuleReasoner;
 import org.apache.jena.reasoner.rulesys.Rule;
 
@@ -42,8 +42,10 @@ public class App {
         Model baseInf = ontModelInf.getBaseModel();
         System.out.println("Base model created");
 
+
         // Create a reasoner
-        Reasoner reasoner = new GenericRuleReasoner(Rule.rulesFromURL(RULES));
+        GenericRuleReasoner reasoner = new GenericRuleReasoner(Rule.rulesFromURL(RULES));
+        BuiltinRegistry.theRegistry.register(new MaxCount());
         System.out.println("Reasoner created");
 
         // Create an inference model

@@ -156,7 +156,6 @@ def genre(cur):
             f'INSERT INTO musinco.genre (genre_id,genre_name) VALUES("{genre[0]}", "{genre[1]}");'
         )
 
-
 def artist(cur):
     name_api["data"] = json.loads(
         requests.get(name_api["url"], headers=name_api["headers"]).content.decode(
@@ -165,6 +164,7 @@ def artist(cur):
     )
 
     names = [(x["objectId"], x["Name"]) for x in name_api["data"]["results"]]
+#TODO: Add more Artist
     for name in names:
         cur.execute(f'INSERT INTO musinco.artist (artist_name) VALUES("{name[1]}");')
 

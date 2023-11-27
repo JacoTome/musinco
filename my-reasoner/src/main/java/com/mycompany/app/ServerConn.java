@@ -40,7 +40,7 @@ public class ServerConn {
 
         conn.querySelect(PREFIXES +
                 "SELECT DISTINCT * WHERE { " +
-                " ?s ?q <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Genre/809>  " +
+                " ?s musico:displayed_mood ?o  " +
                 "} " +
                 "LIMIT 50", System.out::println);
         long endTime = System.nanoTime();
@@ -53,7 +53,7 @@ public class ServerConn {
     public static void tryConnection() {
         // Measure time
         try (RDFConnection conn = RDFConnection.connect("http://localhost:3030/ds")) {
-            tryInsertQuery(conn);
+//            tryInsertQuery(conn);
             trySelectQuery(conn);
 
 

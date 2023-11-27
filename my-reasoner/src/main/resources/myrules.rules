@@ -42,7 +42,14 @@
     (?t time:hour ?h)
     ->
     (?t musinco:popular_mood ?m)
+
    ]
+
+[test:
+    (?s ?p ?mood)
+    (?mood rdf:type <http://purl.obolibrary.org/obo/MFOEM_000193> )
+    MaxCount(?s ,?p, ?mood)
+    -> (?s ?p ?mood)]
 
  [workMood:
     (?p rdf:type musico:MusicianParticipation),

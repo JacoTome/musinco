@@ -65,7 +65,7 @@ target		:Instrument/{instrument_id} a mo:Instrument ; schema:name :Text/{instrum
 source		Select * from musinco.instruments
 
 mappingId	MAPID-User_group
-target		:Users/{user_id} musico:has_group :MusiciansGroup/{group_id} . 
+target		:Users/{user_id} mo:member_of :MusiciansGroup/{group_id} . 
 source		Select * from musinco.group_user
 
 mappingId	MAPID-SelfLearning
@@ -73,7 +73,7 @@ target		:SelfLearningSession/{session_id} a musico:SelfLearning ; time:day {gior
 source		Select session_id, DATE(date) as giorno, HOUR(date) as ora , MINUTE(date) as minuti , SECOND(date) as secondi ,music_venue_id from musinco.self_learning_session
 
 mappingId	MAPID-plays_instrument
-target		:Users/{user_id} musicoo:plays_instrument :Instrument{instrument_id} . 
+target		:Users/{user_id} musicoo:plays_instrument :Instrument/{instrument_id} . 
 source		Select * from musinco.user_has_instrument
 
 mappingId	MAPID-genre_similar_to

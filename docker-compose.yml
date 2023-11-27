@@ -3,16 +3,16 @@ networks:
   flink:
     name: flink
     driver: bridge
-   
+
 services:
   jobmanager:
     image: flink:latest
     networks:
       - flink
-      
+
     ports:
       - "8081:8081"
-     
+
     command: jobmanager
     environment:
       - |
@@ -36,5 +36,3 @@ services:
         taskmanager.numberOfTaskSlots: 2
     extra_hosts:
       - "host.docker.internal:host-gateway"
-
-    
