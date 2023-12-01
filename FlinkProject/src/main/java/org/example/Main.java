@@ -54,7 +54,13 @@ public class Main {
                 .process(new ModelCreationJob())
                 .name("Model Creation Job");
 
+                }).keyBy(RdfData::getObject)
+                .process(new ModelCreationJob())
+                .name("Model Creation Job");
 
+        genreStream.keyBy(RdfData::getObject)
+                .process(new CountGenre())
+                .name("Jena Sink");
 
         env.execute("RDF Kafka Stream");
     }

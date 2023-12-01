@@ -9,3 +9,4 @@ my-reasoner/target/classes/com/mycompany/app/App.class
 *.rdf
 
 *.jar
+FlinkApp.zip
