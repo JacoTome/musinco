@@ -1,5 +1,8 @@
 package org.example;
 
+import org.apache.flink.api.common.functions.MapFunction;
+import org.eclipse.rdf4j.model.base.CoreDatatype;
+
 import java.io.Serializable;
 
 public class RdfData implements Serializable {
@@ -36,6 +39,27 @@ public class RdfData implements Serializable {
     private String subject;
     private String predicate;
     private String object;
+
+    public static Integer getCount() {
+        return count;
+    }
+
+    public static void setCount(Integer count) {
+        RdfData.count = count;
+    }
+
+    private static Integer count = 0;
+
+    public static MapFunction<String, RdfData> mapToRdfData = new MapFunction<String, RdfData>() {
+        @Override
+        public RdfData map(String s) throws Exception {
+            s = s.replace("(", "");
+            s = s.replace(")", "");
+            s = s.replace(",", "");
+            String[] parts = s.split(" ");
+            return new RdfData(parts[0], parts[1], parts[2]);
+        }
+    };
 
 
 }

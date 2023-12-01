@@ -20,16 +20,17 @@ import java.io.*;
 import java.net.UnknownHostException;
 import java.util.Properties;
 
+import static java.lang.Thread.sleep;
+
 public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     public static RDFParser rdfParser = Rio.createParser(RDFFormat.RDFXML);
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException{
 
-        logger.info("Hello World");
 
-        String bootstrapServers = "127.0.0.1:9092";
+        String bootstrapServers = "192.168.0.6:9092";
 
         // create producer
         Properties properties = new Properties();
@@ -53,21 +54,20 @@ public class Main {
         }
 
         // create the producer
+        logger.info("Creating producer");
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
+        logger.info("Producer created");
         // create a producer record
 
-
         for (Statement statement : model) {
-            ProducerRecord<String, String> producerRecord =
-                    new ProducerRecord<>("demo_java", statement.toString());
-
-            // send data - asynchronous
-
-            producer.send(producerRecord);
-            producer.flush();
+            String subject = statement.getSubject().toString();
+//                if (subject.contains("MusicianParticipation")) {
+                    logger.info("Sending MP statement");
+                    ProducerRecord<String, String> record = new ProducerRecord<>("MPStream", statement.toString());
+                    producer.send(record);
+                    producer.flush();
+//                }
         }
-
-
         producer.close();
     }
 }
