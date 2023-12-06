@@ -27,7 +27,7 @@ public class Main {
     public static RDFParser rdfParser = Rio.createParser(RDFFormat.RDFXML);
 
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
 
 
         String bootstrapServers = "192.168.0.6:9092";
@@ -43,7 +43,7 @@ public class Main {
         rdfParser.setRDFHandler(new StatementCollector(model));
 
         // Load xml file
-        String fileName = "src/main/resources/musinco2-materialized.xml";
+        String fileName = "src/main/resources/musinco4-materialized.xml";
         File file = new File(fileName);
         InputStream inputStream = new FileInputStream(file);
 
@@ -56,17 +56,23 @@ public class Main {
         // create the producer
         logger.info("Creating producer");
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
+
         logger.info("Producer created");
         // create a producer record
 
         for (Statement statement : model) {
             String subject = statement.getSubject().toString();
-//                if (subject.contains("MusicianParticipation")) {
-                    logger.info("Sending MP statement");
-                    ProducerRecord<String, String> record = new ProducerRecord<>("MPStream", statement.toString());
-                    producer.send(record);
-                    producer.flush();
-//                }
+            String predicate = statement.getPredicate().toString();
+//            if (subject.contains("MusicianParticipation") ){
+//                    ProducerRecord<String, String> record = new ProducerRecord<>("MPStream", statement.toString());
+//                    producer.send(record);
+//                    producer.flush();
+//        }
+            if (subject.contains("SelfLearningSession")) {
+                ProducerRecord<String, String> record = new ProducerRecord<>("SLSStream", statement.toString());
+                producer.send(record);
+                producer.flush();
+            }
         }
         producer.close();
     }

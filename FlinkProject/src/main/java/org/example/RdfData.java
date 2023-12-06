@@ -1,5 +1,6 @@
 package org.example;
 
+import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.eclipse.rdf4j.model.base.CoreDatatype;
 
@@ -61,5 +62,12 @@ public class RdfData implements Serializable {
         }
     };
 
-
+    @Override
+    public String toString() {
+        return "RdfData{" +
+                "\nsubject='" + subject + '\'' +
+                ", \npredicate='" + predicate + '\'' +
+                ", \nobject='" + object + '\'' +
+                '}';
+    }
 }
