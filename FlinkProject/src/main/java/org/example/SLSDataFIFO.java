@@ -207,7 +207,6 @@ public class SLSDataFIFO {
                 SLSDataState.update(currentSLSData);
             }
         }
-
         @Override
         public void open(Configuration config) {
             ValueStateDescriptor<SLSData> descriptor =
@@ -218,3 +217,4 @@ public class SLSDataFIFO {
         }
     }
 }
+
