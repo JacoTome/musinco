@@ -45,7 +45,6 @@ public class App {
 
         // Create a reasoner
         GenericRuleReasoner reasoner = new GenericRuleReasoner(Rule.rulesFromURL(RULES));
-        BuiltinRegistry.theRegistry.register(new MaxCount());
         System.out.println("Reasoner created");
 
         // Create an inference model
