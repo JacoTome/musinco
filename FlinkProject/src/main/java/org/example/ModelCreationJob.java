@@ -21,9 +21,6 @@ public class ModelCreationJob extends KeyedProcessFunction<String,RdfData, RdfDa
         String predicate = rdfData.getPredicate();
         String object = rdfData.getObject();
 
-        System.out.println("Subject: " + subject);
-        System.out.println("Predicate: " + predicate);
-        System.out.println("Object: " + object);
         collector.collect(rdfData);
     }
 }

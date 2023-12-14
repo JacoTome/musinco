@@ -9,9 +9,11 @@ import java.io.File;
 public class JenaSink implements SinkFunction<RdfData> {
 
 
+
         @Override
         public void invoke(RdfData value, Context context) throws Exception {
                 // Push to jena database
+
 
 
         }
