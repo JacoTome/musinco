@@ -9,6 +9,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:smi="http://purl.org/ontology/iomust/smi#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:core="http://purl.org/ontology/ao/core#"
@@ -418,6 +419,24 @@
     
 
 
+    <!-- http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#adminRole -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#adminRole"/>
+    
+
+
+    <!-- http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#modRole -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#modRole"/>
+    
+
+
+    <!-- http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#userRole -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#userRole"/>
+    
+
+
     <!-- http://www.w3.org/2001/XMLSchema#date -->
 
     <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
@@ -477,6 +496,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#accountRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#accountRole">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+        <rdfs:range rdf:resource="https://schema.org/Role"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#played_genre -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#played_genre">
@@ -532,6 +560,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#accountPwd -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#accountPwd">
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
     
 
 

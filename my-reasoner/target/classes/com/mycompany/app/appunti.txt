@@ -1,6 +1,0 @@
-Usare Flink o Spark
-Generare stato live
-Stati raggruppati per ora, stati da mantenere Live
-Applicazione flink per tenere gli stati
-Programma java -> Connettersi a FLink via rest
-Normalizzare Orario

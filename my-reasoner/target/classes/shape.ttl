@@ -1,0 +1,187 @@
+@prefix musico: <http://purl.org/ontology/musico/>
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix mo: <http://purl.org/ontology/mo/>
+@prefix musicoo: <http://purl.org/ontology/musico#>
+@prefix musinco: <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#>
+@prefix schema: <https://schema.org/>
+@prefix time: <http://www.w3.org/2006/time#>
+@prefix sh: <http://www.w3.org/ns/shacl#>
+@prefix owl: <http://www.w3.org/2002/07/owl#>
+@prefix foaf: <http://xmlns.com/foaf/0.1/>
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# User Shape
+# It must have 1 played genre
+
+musinco:HumanMusicianShape
+    a sh:NodeShape;
+    sh:targetClass musicoo:HumanMusician;
+    sh:property [
+        sh:path musico:plays_genre;
+        sh:class mo:Genre;
+        sh:minCount 1;
+        sh:maxCount 1;
+    ];
+    sh:property [
+        sh:path owl:sameAs;
+        sh:class musinco:Artist;
+        sh:minCount 1;
+        sh:maxCount 1;
+    ];
+    sh:property [
+        sh:path musico:plays_instrument;
+        sh:class mo:Instrument;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path schema:name;
+        sh:class schema:Text;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path foaf:based_near;
+        sh:class schema:GeoCoordinates;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path musinco:cod_fiscale;
+        sh:dataType xsd:string;
+        sh:minCount 1;
+    ].
+# Musician Participation Shape
+musinco:MusicianParticipationShape
+    a sh:NodeShape;
+    sh:targetClass musicoo:MusicianParticipation;
+    sh:property[
+        sh:path musico:involved_event;
+        sh:class musico:MusicalEvent;
+        sh:minCount 1;
+    ];
+    sh:property[
+        sh:path musico:participating_musician; ;
+        sh:class musicoo:HumanMusician;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path musico:played_instrument;
+        sh:class mo:Instrument;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path musico:played_musical_work;
+        sh:class mo:MusicalWork;
+        sh:minCount 1;
+    ].
+
+# Self learning session shape
+musinco:SelfLearningSessionShape
+    a sh:NodeShape;
+    sh:targetClass musico:SelfLearning;
+    sh:property [
+        sh:path owl:sameAs;
+        sh:class musico:MusicalEvent;
+        sh:minCount 1;
+        sh:maxCount 1;
+    ];
+    sh:property [
+        sh:path schema:address;
+        sh:class schema:MusicVenue;
+        sh:minCount 1;
+        sh:maxCount 1;
+    ];
+    sh:property [
+        sh:path time:hour;
+        sh:dataType xsd:nonNegativeInteger;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:minInclusive 0;
+        sh:maxInclusive 23;
+    ];
+    sh:property [
+        sh:path time:minute;
+        sh:dataType xsd:nonNegativeInteger;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:minInclusive 0;
+        sh:maxInclusive 59;
+    ];
+    sh:property [
+        sh:path time:second;
+        sh:dataType xsd:nonNegativeInteger;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:minInclusive 0;
+        sh:maxInclusive 59;
+    ].
+
+# Musical Venue Shape
+musinco:MusicVenue
+    a sh:NodeShape;
+    sh:targetClass schema:MusicVenue;
+    sh:property [
+        sh:path schema:name;
+        sh:class schema:Text;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path schema:address;
+        sh:class schema:GeoCoordinates;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path schema:telephone;
+        sh:class schema:Number;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path schema:email;
+        sh:class schema:Text;
+        sh:minCount 1;
+    ].
+
+# Musical Position Shape
+musinco:Position 
+    a sh:NodeShape;
+    sh:targetClass schema:GeoCoordinates;
+    sh:property [
+        sh:path schema:latitude;
+        sh:class schema:Number;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path schema:longitude;
+        sh:class schema:Number;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path schema:address;
+        sh:class schema:PostalAddress;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path schema:addressCountry;
+        sh:class schema:Country;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path schema:containedIn;
+        sh:class schema:City;
+        sh:minCount 1;
+    ].
+    
+musinco:MusiciansGroup
+    a sh:NodeShape;
+    sh:targetClass musico:MusiciansGroup;
+    sh:property [
+        sh:path schema:name;
+        sh:class schema:Text;
+        sh:minCount 1;
+    ];
+    sh:property [
+        sh:path owl:sameAs;
+        sh:class musinco:Artist;
+        sh:minCount 1;
+        sh:maxCount 1;
+    ]
+
+ ###### add SHACL vocabulary ###### 

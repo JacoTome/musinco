@@ -27,11 +27,11 @@ public class Main {
     public static RDFParser rdfParser = Rio.createParser(RDFFormat.RDFXML);
 
 
-    public static void main(String[] args) throws IOException {
+    public static <List> void main(String[] args) throws IOException {
 
 
         String bootstrapServers = "localhost" +
-                ":9093";
+                ":9092";
 
         // create producer
         Properties properties = new Properties();
@@ -60,20 +60,40 @@ public class Main {
 
         logger.info("Producer created");
         // create a producer record
+        int count = 0;
 
         for (Statement statement : model) {
+
             String subject = statement.getSubject().toString();
-            if (subject.contains("MusicianParticipation") ){
+
+
+            if (
+                    subject.contains("MusicianParticipation")
+//                && !(statement.getPredicate().toString().contains("iswc")
+//                            || statement.getPredicate().toString().contains("uuid")
+//                            || statement.getPredicate().toString().contains("identifier"))
+
+//                && !statement.getObject().toString().isEmpty()
+            ){
+
                     ProducerRecord<String, String> record = new ProducerRecord<>("MPStream", statement.toString());
                     producer.send(record);
                     producer.flush();
-        }
-            if (subject.contains("SelfLearningSession")) {
+//                    count += 1;
+//                    System.out.println(record);
+
+            }
+            if (subject.contains("SelfLearningSession")
+////                 statement.getPredicate().toString().contains("sameAs")
+//                && !statement.getObject().toString().isEmpty()
+            ) {
                 ProducerRecord<String, String> record = new ProducerRecord<>("SLSStream", statement.toString());
                 producer.send(record);
                 producer.flush();
+                count += 1;
             }
         }
+        System.out.println(count);
         producer.close();
     }
 }

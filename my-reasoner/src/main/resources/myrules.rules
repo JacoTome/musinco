@@ -6,6 +6,8 @@
 @prefix schema: <https://schema.org/>
 @prefix time: <http://www.w3.org/2006/time#>
 
+@include <OWL>
+@include <RDFS>
 
 [mGroupGenre:
  (?A musicoo:plays_genre ?G), (?A musico:has_group ?M)
@@ -30,30 +32,16 @@
     ->
     (?i musinco:used_to_play ?g)]
 
-[timeMood:
-    (?p rdf:type musico:SelfLearning),
-    (?p time:day ?d ),
-    (?p time:hour ?h ),
-    (?p owl:sameAs ?e),
-    (?part musico:involved_event ?e),
-    (?part musico:displayed_mood ?m),
-    (?t rdf:type schema:Time)
-    (?t time:day ?d)
-    (?t time:hour ?h)
-    ->
-    (?t musinco:popular_mood ?m)
-
-   ]
-
-[test:
-    (?s ?p ?mood)
-    (?mood rdf:type <http://purl.obolibrary.org/obo/MFOEM_000193> )
-    MaxCount(?s ,?p, ?mood)
-    -> (?s ?p ?mood)]
-
  [workMood:
     (?p rdf:type musico:MusicianParticipation),
     (?p musico:played_musical_work ?w)
     (?p musico:displayed_mood ?m)
     ->
     (?w musinco:popular_mood ?m)]
+
+[genreMood:
+    (?w rdf:type mo:MusicalWork),
+    (?w mo:genre ?g),
+    (?w musinco:popular_mood ?m)
+    ->
+    (?g musinco:popular_mood ?m)]

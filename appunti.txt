@@ -1,4 +1,0 @@
-1. Query proposte in SQL vs SPARQL il più pesante possibile
-2. Gerarchie di classi in sql vs sparql
-3. SHAQL per consistenza per verifica normale
-4. Sperimentazione dei pesi sulle relazione

@@ -1,6 +1,7 @@
 version: "2.2"
 networks:
   flink:
+    external: true
     name: flink
     driver: bridge
 
@@ -16,8 +17,9 @@ services:
     command: jobmanager
     environment:
       - |
-        FLINK_PROPERTIES=
-        jobmanager.rpc.address: jobmanager
+        FLINK_PROPERTIES= jobmanager.rpc.address: jobmanager
+      - JENA_FUSEKI_URL=http://204.216.223.231:3030
+
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
@@ -34,5 +36,6 @@ services:
         FLINK_PROPERTIES=
         jobmanager.rpc.address: jobmanager
         taskmanager.numberOfTaskSlots: 2
+      - JENA_FUSEKI_URL=http://204.216.223.231:3030/musinco
     extra_hosts:
       - "host.docker.internal:host-gateway"

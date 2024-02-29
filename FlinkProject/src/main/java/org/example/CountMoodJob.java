@@ -12,9 +12,8 @@ import java.util.List;
 
 public class CountMoodJob {
     // Aggregate function to count the number of times each mood appears every hour
-
     public static class AggregateMoodFunction
-            implements AggregateFunction<EventData.EventDataObject, HashMap<Integer,HashMap<String, Integer>>, List<String>> {
+            implements AggregateFunction<EventData.EventDataObject, HashMap<Integer,HashMap<String, Integer>>, List<RdfData>> {
 
         @Override
         public HashMap<Integer,HashMap<String, Integer>> createAccumulator() {
@@ -43,8 +42,9 @@ public class CountMoodJob {
         }
 
         @Override
-        public List<String> getResult(HashMap<Integer,HashMap<String, Integer>> HourMoodCount) {
-            List<String> result = new ArrayList<>();
+        public List<RdfData> getResult(HashMap<Integer,HashMap<String, Integer>> HourMoodCount) {
+            final String musincoPrefix = "http://www.semanticweb.org/jaco/ontologies/2023/7/musinco";
+            List<RdfData> result = new ArrayList<>();
             for (int i = 0; i < 24; i++) {
                 // Get max value for each hour
                 int max = 0;
@@ -63,8 +63,19 @@ public class CountMoodJob {
                 // Find all moods with max value
                 for (String mood: HourMoodCount.get(i).keySet()) {
                     if (HourMoodCount.get(i).get(mood) == max) {
-                        maxMood = mood;
-                        result.add("\nHour: " + i + "\nMood: "+ maxMood + "\nCount: " + max + "\n");
+
+                        RdfData rdfData = new RdfData(
+                                musincoPrefix + "/hour_" + i,
+                                musincoPrefix + "#popular_mood",
+                                 mood
+                        );
+                        RdfData hourData = new RdfData(
+                                musincoPrefix + "/hour_" + i,
+                                "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",//rdf type
+                                "https://schema.org/Time"
+                        );
+                        result.add(rdfData);
+                        result.add(hourData);
                     }
                 }
                 HourMoodCount.get(i).clear();
@@ -76,7 +87,6 @@ public class CountMoodJob {
         public HashMap<Integer,HashMap<String, Integer>> merge(
                 HashMap<Integer,HashMap<String, Integer>> hashMaps,
                 HashMap<Integer, HashMap<String, Integer>> acc1) {
-            System.out.println("MERGING ACCUMULATORS");
             for (int i = 0; i < 24; i++) {
                 for (String mood : hashMaps.get(i).keySet()) {
                     if (acc1.get(i).containsKey(mood)) {

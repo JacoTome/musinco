@@ -1,0 +1,47 @@
+@prefix musico: <http://purl.org/ontology/musico/>
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix mo: <http://purl.org/ontology/mo/>
+@prefix musicoo: <http://purl.org/ontology/musico#>
+@prefix musinco: <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#>
+@prefix schema: <https://schema.org/>
+@prefix time: <http://www.w3.org/2006/time#>
+
+@include <OWL>
+@include <RDFS>
+
+[mGroupGenre:
+ (?A musicoo:plays_genre ?G), (?A musico:has_group ?M)
+->
+(?M musico:plays_genre ?G)]
+
+[venueGenre:
+    (?p rdf:type musico:MusicianParticipation),
+    (?p musico:involved_event ?e),
+    (?s owl:sameAs ?e),
+    (?s schema:address ?v),
+    (?p musico:played_musical_work ?w ),
+    (?w mo:genre ?g),
+    ->
+    (?v musinco:played_genre ?g)]
+
+[instrGenre:
+    (?p rdf:type musico:MusicianParticipation),
+    (?p musico:played_instrument ?i),
+    (?p musico:played_musical_work ?w ),
+    (?w mo:genre ?g),
+    ->
+    (?i musinco:used_to_play ?g)]
+
+ [workMood:
+    (?p rdf:type musico:MusicianParticipation),
+    (?p musico:played_musical_work ?w)
+    (?p musico:displayed_mood ?m)
+    ->
+    (?w musinco:popular_mood ?m)]
+
+[genreMood:
+    (?w rdf:type mo:MusicalWork),
+    (?w mo:genre ?g),
+    (?w musinco:popular_mood ?m)
+    ->
+    (?g musinco:popular_mood ?m)]

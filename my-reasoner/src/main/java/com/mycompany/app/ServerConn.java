@@ -20,10 +20,13 @@ public class ServerConn {
 
         Txn.executeWrite(conn, () -> {
             conn.update(PREFIXES +
-                    "INSERT DATA{ \n " +
-                    "<musinco:JacoArtist> musicoo:plays_genre <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Genre/809> ;\n " +
-                    " musico:hasGroup <musinco:JacoGroup> .\n " +
-                    "}\n");
+                    "INSERT DATA { " +
+                    "  <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Users/13220> \n" +
+
+                    "            a musico:HumanMusician. " +
+                    "}");
+
+
             System.out.println("Inserted");
         });
 
@@ -39,10 +42,8 @@ public class ServerConn {
         long startTime = System.nanoTime();
 
         conn.querySelect(PREFIXES +
-                "SELECT DISTINCT * WHERE { " +
-                " ?s musico:displayed_mood ?o  " +
-                "} " +
-                "LIMIT 50", System.out::println);
+                        "select * WHERE {<http://www.semanticweb.org/jaco/ontologies/2023/7/musinco/Users/13220> ?p ?o} limit 50 ",
+                System.out::println);
         long endTime = System.nanoTime();
         long duration = (endTime - startTime);
         System.out.println("Time: " + duration / 1000000 + "ms");
@@ -53,7 +54,7 @@ public class ServerConn {
     public static void tryConnection() {
         // Measure time
         try (RDFConnection conn = RDFConnection.connect("http://localhost:3030/ds")) {
-//            tryInsertQuery(conn);
+            tryInsertQuery(conn);
             trySelectQuery(conn);
 
 
@@ -65,11 +66,8 @@ public class ServerConn {
 
     public static void main(String[] args) {
         try (RDFConnection conn = RDFConnection.connect("http://localhost:3030/ds")) {
-
-            conn.querySelect("SELECT DISTINCT ?s { ?s ?p ?o } LIMIT 10", (qs) -> {
-                Resource subject = qs.getResource("s");
-                System.out.println("Subject: " + subject);
-            });
+//            tryInsertQuery(conn);
+            trySelectQuery(conn);
         } catch (Exception e) {
             System.out.println(e);
         }
