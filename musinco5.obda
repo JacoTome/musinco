@@ -8,6 +8,7 @@ obo:		http://purl.obolibrary.org/obo/
 owl:		http://www.w3.org/2002/07/owl#
 rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
 smi:		http://purl.org/ontology/iomust/smi#
+wot:		http://xmlns.com/wot/0.1/
 xml:		http://www.w3.org/XML/1998/namespace
 xsd:		http://www.w3.org/2001/XMLSchema#
 core:		http://purl.org/ontology/ao/core#
@@ -29,7 +30,7 @@ ace_lexicon:	http://attempto.ifi.uzh.ch/ace_lexicon#
 
 [MappingDeclaration] @collection [[
 mappingId	MAPID-Artist
-target		:Artist/{artist_id} a :Artist ; schema:name :Text/{artist_name} . :Text/{artist_name} a schema:Text . 
+target		:Artist/{artist_id} a <http://www.semanticweb.org/jaco/ontologies/2023/7/musinco#Artist> ; schema:name :Text/{artist_name} . :Text/{artist_name} a schema:Text . 
 source		select * from musinco.artist
 
 mappingId	MAPID-MusiciansGroup
@@ -37,7 +38,7 @@ target		:MusiciansGroup/{group_id} a musico:MusiciansGroup ; schema:name :Text/{
 source		select * from musinco.musician_group
 
 mappingId	MAPID-Users
-target		:Users/{user_id} a musicoo:HumanMusician ; musicoo:expertise_level {expertise_level} ; musicoo:professional_level {professional_level} ; musicoo:multi-instrumentalism_level {multi-instrumentalism_level} ; foaf:based_near :Position/{based_near} ; foaf:lastName {last_name} ; foaf:firstName {first_name} ; :email {email} ; :cod_fiscale {codice_fiscale} ; :username {username} ; owl:sameAs :Artist/{user_id} . 
+target		:Users/{user_id} a musicoo:HumanMusician ; musicoo:expertise_level {expertise_level} ; musicoo:professional_level {professional_level} ; musicoo:multi-instrumentalism_level {multi-instrumentalism_level} ; foaf:based_near :Position/{based_near} ; foaf:lastName {last_name} ; foaf:firstName {first_name} ; owl:sameAs :Artist/{user_id} . 
 source		Select * from musinco.users
 
 mappingId	MAPID-MusicVenue
