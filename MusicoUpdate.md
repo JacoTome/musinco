@@ -14,9 +14,29 @@ correggere prefissi: OK
 <!-- Descrivere assiomi su un file separato
 Journal of WebSemantics cerca articoli su ontologie per cercare assiomi -->
 
+## Appunti prototipo
+
+Link ad altri social/pagine
+
+Spezzoni di canzoni caricati dall'utente
+
+Follower(?)
+
+icone strumenti
+
+prenotazioni eventi, mappe,
+
+Eventi privati
+
+Annunci per eventi
+
+suggerimenti per eventi
+
+Descrizione utente
+
 ## To ADD
 
-- Something to express current mood of HumanMusician
+- Something to express real time mood of HumanMusician
 
 - Segnare se 2 artisti hanno già suonato insieme -> gets_recommendation_user
 
@@ -25,6 +45,12 @@ Journal of WebSemantics cerca articoli su ontologie per cercare assiomi -->
 - Integrare DBPedia Generi, lavori, artisti tutto
 
 - Add recommendation for a venue
+
+- Inferire indirizzo per la performance
+
+- accessibilità per disabili alla music venue -> se un musicista con disabilità suona in una venue, allora la venue è accessibile per disabili
+
+- livello della professionalità della venue -> se un artista suona in una venue, allora la venue è di un certo livello di professionalità
 
 ## General Description
 
