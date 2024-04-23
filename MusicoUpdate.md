@@ -42,8 +42,8 @@ Descrizione utente
 
 - recognized_mood domains: MusicalWork, Genre, MusicianParticipation
 
-- Integrare DBPedia Generi, lavori, artisti tutto
-
+- Integrare DBPedia Generi, lavori, artisti tutto //OK
+    - Matchare concetti Equivalenza
 - Add recommendation for a venue
 
 - Inferire indirizzo per la performance
@@ -51,6 +51,12 @@ Descrizione utente
 - accessibilità per disabili alla music venue -> se un musicista con disabilità suona in una venue, allora la venue è accessibile per disabili
 
 - livello della professionalità della venue -> se un artista suona in una venue, allora la venue è di un certo livello di professionalità
+
+- AGGIUNGERE STORICO
+
+- Altri assiomi SWRL
+
+- SCADENZA 10 LUGLIO !! 
 
 ## General Description
 
