@@ -43,20 +43,63 @@ Descrizione utente
 - recognized_mood domains: MusicalWork, Genre, MusicianParticipation
 
 - Integrare DBPedia Generi, lavori, artisti tutto //OK
-    - Matchare concetti Equivalenza
+  - Matchare concetti Equivalenza
 - Add recommendation for a venue
 
-- Inferire indirizzo per la performance
+<!-- - Inferire indirizzo per la performance -->
 
-- accessibilità per disabili alla music venue -> se un musicista con disabilità suona in una venue, allora la venue è accessibile per disabili
+<!-- - accessibilità per disabili alla music venue -> se un musicista con disabilità suona in una venue, allora la venue è accessibile per disabili -->
 
-- livello della professionalità della venue -> se un artista suona in una venue, allora la venue è di un certo livello di professionalità
+<!-- - livello della professionalità della venue -> se un artista suona in una venue, allora la venue è di un certo livello di professionalità -->
+<!---->
 
 - AGGIUNGERE STORICO
 
 - Altri assiomi SWRL
 
-- SCADENZA 10 LUGLIO !! 
+- SCADENZA 10 LUGLIO !!
+
+## Update 05/05
+
+### Rules
+
+```swrl
+6) eventRecommendation:
+    HumanMusician(?u) ^ MusicalEvent(?ev) ^
+    place(?ev, ?pl)^ played_genre(?pl,?gen) ^ foaf:based_near(?pl, ?city) ^ not_ended(?ev)
+    foaf:based_near(?u, ?city) ^ plays_genre(?u, ?gen)
+        ->
+    gets_recommended_event(?u, ?ev) ^ event_genre(?ev, ?gen)
+
+```
+
+### MusicalEvent changes
+
+- Add a property to indicate the music genre of the event
+
+- Add a property to indicate if event already happened or not
+
+- Add a property to indicate if event is private
+
+- gets recommendation for event
+
+### dbpedia import
+
+#### Equivalent Classes already added
+
+- dbo:MusicGenre
+
+- dbo:Instrument
+
+- dbo:MusicalWork
+
+#### Equivalent classes in dubbio
+
+- MusicalArtist with HumanMusician
+
+#### Data Properties
+
+- dbo:mood -> for real time mood of HumanMusician
 
 ## General Description
 

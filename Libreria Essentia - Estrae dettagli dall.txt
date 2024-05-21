@@ -1,0 +1,11 @@
+Libreria Essentia - Estrae dettagli dall'estratto suonato dall'user
+
+TEMPO REALE
+
+calcolo dati in locale e manda al server
+
+notifica quando un utente inizia a suonare una certa tonalità
+
+presentare sistema a livello di "blocchi" (boh)
+
+
